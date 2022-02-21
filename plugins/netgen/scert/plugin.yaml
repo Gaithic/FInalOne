@@ -1,0 +1,16 @@
+plugin:
+    name: 'netgen.scert::lang.plugin.name'
+    description: 'Plugin for homepage modules.'
+    author: Netgen
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Scert Solan'
+        url: netgen/scert/globalsetting/update/settings
+        icon: icon-home
+        sideMenu:
+            side-menu-item:
+                label: 'Global Settings'
+                url: netgen/scert/globalsetting/update/settings
+                icon: icon-cogs

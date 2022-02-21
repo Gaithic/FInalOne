@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        site_name:
+            label: 'Site Name'
+            span: auto
+            type: text
+            tab: General
+        email:
+            label: Email
+            span: auto
+            type: text
+            tab: General
+        phone_number:
+            label: 'Phone number'
+            span: auto
+            type: text
+            tab: General
+        site_logo:
+            label: 'SCERT Logo'
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: General
+        hp_logo:
+            label: 'HP Logo'
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: General
+        address:
+            label: Address
+            size: large
+            span: full
+            type: richeditor
+            tab: Footer
+        disclaimer:
+            label: Disclaimer
+            size: large
+            span: auto
+            type: richeditor
+            tab: Footer
+        copy_right:
+            label: 'Copyright Section'
+            span: auto
+            size: large
+            type: richeditor
+            tab: Footer
+        home_about:
+            label: 'Home About'
+            size: huge
+            span: full
+            type: richeditor
+            tab: Home

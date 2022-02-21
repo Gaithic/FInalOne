@@ -1,0 +1,11 @@
+items:
+    -
+        title: About
+        type: url
+        url: /about
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: about

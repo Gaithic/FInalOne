@@ -1,0 +1,11 @@
+name: GlobalSetting
+modelClass: Netgen\Scert\Models\GlobalSetting
+form: $/netgen/scert/models/globalsetting/fields.yaml
+defaultRedirect: netgen/scert/globalsetting
+create:
+    redirect: 'netgen/scert/globalsetting/update/:id'
+    redirectClose: netgen/scert/globalsetting
+update:
+    redirect: netgen/scert/globalsetting
+    redirectClose: netgen/scert/globalsetting
+preview: {  }

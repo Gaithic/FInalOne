@@ -1,0 +1,522 @@
+@font-face {
+	font-family: headingFont;
+	src: url(OpenSans-Bold.ttf);
+}
+@font-face {
+	font-family: parafont;
+	src: url(OpenSans-Regular.ttf);}
+	*
+	{padding:0px; margin:0px; box-size:border-box;}
+
+/*............starts of global Css*/
+:root {
+	--main-bg-color: rgb(5 38 73);
+	--secondary-bg-color: #ffca00;
+	--footer-bg-color: #341a6c;
+	--para-font-size:17px;
+	--heading-font-size:30px;
+	--text-white: #fff;
+	--text-black: #000000;
+	--font-weight-600: 600;
+}
+ul, ol 
+{
+	list-style: none;
+	margin-bottom: 0;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: headingFont;
+	font-size: var(--heading-font-size);
+}
+p, a, span, ul, li, ol{
+	font-family: parafont !important;
+	
+	font-size: var(--para-font-size);
+}
+a, a:hover{text-decoration: none !important;}
+button{
+	outline: none !important;
+}
+img {
+	width: 100%;
+}
+/*.................main-css starts*/
+.header-buttons
+{
+	/* border: 1px solid rgb(0, 0, 0); */
+	/* border-radius: 10px; */
+	margin:0px 5px;
+	padding:12px 35px;
+	outline:none;
+	color:#000;
+	font-size:1rem;
+	font-weight:400;
+	line-height:1.4;
+	outline: none;
+	background-color:var(--secondary-bg-color);
+	display: -webkit-inline-box;
+}
+.header-buttons:hover{color:#000;/* border: 2px solid rgb(0, 0, 0); */background-color: var(--secondary-bg-color);text-decoration: none;box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);transition:.5s;outline: none;}
+/*......starts of main-container*/
+.main-container
+{
+	background-color: var(--main-bg-color);
+	height: auto;
+	width: 100%;
+	padding: 3px;
+}
+.main-container a{
+	color: var(--text-white);
+}
+.main-container a:hover{
+	color: var(--text-white);
+}
+.main-container i{
+	color: var(--secondary-bg-color);
+}
+.contact-detail
+{
+	float: left;
+	color: #fff;
+}
+.contact-detail a span{
+	font-size: 15px;
+}
+.signin
+{	float: right;
+	color: #fff;
+}
+.signin a span{
+	font-size: 15px;
+}
+/*.........main-container ends*/
+/*................main-header starts*/
+.menu-header
+{
+	height: auto;
+	width: 100%;
+	background-color: lightgray;
+	position: sticky;
+	top: -1px;
+	z-index: 9999;
+	border-bottom: 2px solid #052649;
+}
+.head-text
+{
+	float: right;
+	color: var(--main-bg-color);
+	font-family: headingFont;
+	font-weight: bold;
+}
+.navbar{
+	padding: 0.3rem 1rem;
+}
+.navbar-brand{
+	display: flex !important;
+	justify-content: center !important;
+	place-items: center !important;
+}
+.navbar-brand h2{
+	margin-bottom: 0px;
+}
+.nav-item a active
+{
+	color: var(--main-bg-color)!important;
+}
+.nav-item a
+{
+	color: var(--main-bg-color)!important;
+}
+.nav-item a:hover
+{
+	color: #052649!important;
+}
+.head-text h2
+{
+	color: #fff;
+	font-family: headingFont;
+}
+.logo-section
+{
+	float:left;
+}
+
+.menu-section
+{
+	float: right;
+}
+.hp-logo{
+    width: 80px;
+}
+.hp-scert-logo{
+	width: 80px;
+}
+/*..............main-header ends*/
+
+/*.................starts of slider*/
+.slider
+{
+	height: auto;
+	width: 100%;	
+}
+.carousel-inner img
+{
+	height: 500px;
+	width: 100%;
+}
+/*...................end of slider*/
+
+/*............starts of three-box*/
+.three-box{
+	background: linear-gradient(rgb(255 255 255 / 80%), rgb(255 255 255 / 80%)), url(../images/hpscert-book.jpg);
+	background-size: inherit;
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: #f8f8f8;
+}
+.grid-area{display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr) );}
+.ntse 
+{
+	min-height: 167px;
+	/* width: 378px; */
+	background-color: var(--main-bg-color);
+	margin-top: -70px;
+	position: relative;
+	padding: 14px;
+}
+.bdr{
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+.ntse .fa-graduation-cap{
+	position: absolute;
+	bottom: 2px;
+	right: 0;
+	transition: .5s;
+}
+.ntse:hover .fa-graduation-cap {
+	transform: rotate(
+		45deg
+	);
+	transition: .5s;
+}
+.ntse  h3
+{
+	color: var(--text-white);
+	padding-top: 10px;
+}
+.ntse  p
+{
+	color: var(--text-white);
+	/* font-weight: 500 !important; */
+	text-align: left;
+}
+.box-one , .box-two, .box-three
+{
+	height: 150px;
+	width: 380px;
+	background-color:var(--main-bg-color);
+	margin-top: -90px;
+	border-right: 1px solid #fff;
+}
+.fa-graduation-cap
+{
+	color: var(--secondary-bg-color);
+	margin-right: 15px;
+}
+/*.....................end of three-box*/
+
+/*image figure*/
+.image-figure{
+	width: 100%;
+	background: #fff;
+	overflow: hidden;
+	position: relative;
+}
+.image-figure:before{
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(
+		-25deg
+	);
+	transform: skewX(
+		-25deg
+	);
+}
+.image-figure:hover:before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+/*end of image figure*/
+
+/*................start of about-text*/
+.home-about-scert{padding: 39px 0;}
+.home-about-scert .about-text
+{
+	/* text-align: center; */
+	font-family: arial;
+	font-size: 30px;
+	font-weight: bold;
+	color: var(--main-bg-color);
+	/* padding-top: 20px; */
+}
+.home-about-scert p{
+	/* text-align: center; */
+	font-family: arial;
+	text-align: justify;
+	line-height: 32px;
+}
+/*......................end of  about-text*/
+/*............starts of scholarship*/
+.scholarship
+{
+	width: 100%;
+	background-color: #f3f3f3;
+	padding: 21px 0px 45px;
+}
+.scholarship-text
+{
+	text-align:center;
+	color: var(--main-bg-color);
+	font-family: arial;
+	font-weight: bold;
+	font-size: 30px;
+}
+.text-one
+{
+	background-color: white;
+	/* width:100%; */
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	/* min-height: 408px; */
+}
+.text-one .header-buttons{
+	
+position: absolute;
+	
+border: 0;
+	
+left: 26%;
+	
+bottom: -26px;
+}
+.header-1 img
+{
+	width: 100%;
+	border-radius: 5px;
+}
+.body1 h5
+{
+	text-align: center;
+	margin-top: 7px;
+}
+.body1 p{
+	text-align: center;
+}
+/*........end of scholarship*/
+/*.... ...starts of announcements*/
+.announcements{
+	padding: 21px 0;
+}
+.announcements p{
+}
+.notice-board
+{
+	text-align:center;
+	color: var(--main-bg-color);
+	font-family: arial;
+	font-weight: bold;
+	font-size: 30px;
+}
+.announcements p
+{
+	text-align:left;
+	border-bottom: 1px solid #e3e3e3;
+	padding-bottom: 7px;
+	display: flex;
+} 
+.announcements p .fa{
+	
+	margin-right: 10px;
+	
+	margin-top: 4px;
+}
+/*.............end of  anouncements */
+/*...............menu-footer starts */
+/*....................footer-menu ends*/
+.footer-menu
+{
+}
+/*......starts main-footer*/
+.main-footer
+{
+	height: auto;
+	width: 100%;
+	background-color: var(--main-bg-color);
+	padding: 22px 0 0;
+}
+.main-footer span
+{
+	color: var(--text-white);
+	font-family: arial;
+	display: flex;
+	margin-top: 10p;
+}
+.main-footer i 
+{
+	color: var(--secondary-bg-color);
+	font-size: 19px;
+	margin-right: 8px;
+	margin-top: 5px;
+}
+.main-footer p
+{
+	color: var(--text-white);
+	text-align: center;
+	margin-top: 10px;
+	font-family: arial;
+	font-size: 16px;
+	line-height: 25px;
+}
+.copyright
+{
+	background-color: #031f3c;
+	padding: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.copyright h6
+{
+	color: var(--text-white);
+	text-align: center;
+	font-family: arial;
+	margin-bottom: 0;
+}
+/*.........main-footer ends*/
+.footer-menu .navbar .nav-item a
+{
+	color: var(--main-bg-color);
+	margin-right:10px;
+}
+.footer-menu .navbar .nav-item a:hover
+{
+	color: var(--secondary-bg-color);
+
+}
+/*.............end main-css*/
+
+.inner-background {
+    width: 100%;
+    background: linear-gradient( 343deg,rgb(5 38 73 / 80%), rgb(5 38 73)95%), url(../images/slider-3.jpg);
+    padding: 50px 15px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    color: #ffca00;
+}
+/*.............end of about us content */
+/*........left-bar*/
+
+.scert-sidebar{
+		/* height: 600px; */
+		width: 100%;
+		border-radius: 3px;
+		border: 1px solid #ccc;
+}
+.scert-sidebar ul li
+	{
+		height: 50px;
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		padding-left: 10px;
+	}
+.scert-sidebar ul li a
+	{
+		color:var(--text-black);
+	}
+.scert-sidebar ul li:hover
+{
+	background-color: var(--main-bg-color);
+	
+}
+.scert-sidebar ul li:hover a
+{
+	color:var(--text-white);
+}
+/*......end of left-bar*/
+/*...................media query starts*/
+
+@media only screen and (max-width: 768px) {
+	.hp-logo{
+		display: none;
+	}
+	.order--1{
+		order: -1;
+	}
+	.ntse{
+		
+margin-top: 0;
+	}
+	.text-one{
+		
+margin-bottom: 57px;
+	}
+	.text-one .header-buttons{
+		
+left: 34%;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.signin {
+		margin-top: -27px;
+	}
+	.carousel-inner img
+	{
+		height: 300px;
+
+	}
+	.ntse ,.nmms ,.sjmmse
+	{
+		height: 164px;
+		/* margin-left: 66px; */
+		float: left;
+	}
+	.ntse {
+		margin-top: 0;
+	}
+	.bdr{
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-right: none;
+		border-left: none;
+	}
+	.text-one .header-buttons{
+		position: static;
+	}
+	.text-one{
+		
+margin-bottom: 15px;
+	}
+}
+/*..............media  query ends*/

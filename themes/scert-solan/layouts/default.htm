@@ -1,0 +1,55 @@
+description = "Default layout"
+
+[staticMenu]
+code = "home"
+==
+<?php
+use Netgen\Scert\Models\GlobalSetting;
+
+function onStart(){
+    $this['configs'] = GlobalSetting::where('id', 'settings')->first();
+}
+?>
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ configs.site_name }} - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="SCERT Solan">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="generator" content="SCERT Solan">
+        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+
+
+        {% styles %}
+    </head>
+    <body>
+
+        <!-- Header -->
+        {% partial 'site/header' %}
+
+        <!-- Main Container -->
+        <div class="main-app">
+            {% page %}
+        </div>
+
+        <!-- Footer -->
+        {% partial 'site/footer' %}
+        
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/js/jquery.min.js',
+            'assets/js/popper.min.js',
+            'assets/js/bootstrap.bundle.min.js',
+        ] |theme }}"></script>
+        {% snowboard all %}
+        {% scripts %}
+    </body>
+</html>

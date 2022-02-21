@@ -1,0 +1,11 @@
+items:
+    -
+        title: Home
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Home
