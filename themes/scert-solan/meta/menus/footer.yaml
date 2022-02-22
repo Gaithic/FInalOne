@@ -1,0 +1,63 @@
+items:
+    -
+        title: 'Important links'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: important-links
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: RTI
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: rti
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Syllabus
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: syllabus
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Pre-Board Examinations'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: pre-board-examinations
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'National Role Play'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: national-role-play
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+name: Footer

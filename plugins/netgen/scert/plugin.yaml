@@ -14,3 +14,15 @@ navigation:
                 label: 'Global Settings'
                 url: netgen/scert/globalsetting/update/settings
                 icon: icon-cogs
+            side-menu-item2:
+                label: Slider
+                url: netgen/scert/slider
+                icon: icon-slideshare
+            side-menu-item3:
+                label: Scholarship
+                url: netgen/scert/scholarship
+                icon: icon-money
+            side-menu-item4:
+                label: Announcements
+                url: netgen/scert/announcement
+                icon: icon-calendar

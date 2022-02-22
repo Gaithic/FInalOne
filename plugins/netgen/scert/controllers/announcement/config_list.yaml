@@ -1,0 +1,12 @@
+list: $/netgen/scert/models/announcement/columns.yaml
+modelClass: Netgen\Scert\Models\Announcement
+title: Announcement
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'netgen/scert/announcement/update/:id'

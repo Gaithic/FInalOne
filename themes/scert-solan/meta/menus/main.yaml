@@ -1,0 +1,76 @@
+items:
+    -
+        title: Home
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: homepage
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'About Us'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about-us
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Cells
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: cells
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Resource
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: resource
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Awards
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: awards
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Contact Us'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: contact-us
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+name: Main

@@ -1,0 +1,4 @@
+title: Announcement
+modelClass: Netgen\Scert\Models\Announcement
+toolbar:
+    buttons: reorder_toolbar

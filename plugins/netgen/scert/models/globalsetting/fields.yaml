@@ -39,6 +39,16 @@ tabs:
             span: auto
             type: fileupload
             tab: General
+        facebook_url:
+            label: 'Facebook URL'
+            span: auto
+            type: text
+            tab: General
+        twitter_url:
+            label: 'Twitter URL'
+            span: auto
+            type: text
+            tab: General
         address:
             label: Address
             size: large

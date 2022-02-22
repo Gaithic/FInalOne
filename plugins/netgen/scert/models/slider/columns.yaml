@@ -1,0 +1,16 @@
+columns:
+    slide_title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    slide_image:
+        label: 'Slide Image'
+        type: image
+        height: '100'
+        width: '250'
+    sort_order:
+        label: 'Sort Order'
+        type: number
+        searchable: true
+        sortable: true

@@ -1,1 +1,11 @@
-static-pages: {  }
+static-pages:
+    about-us: {  }
+    cells: {  }
+    resource: {  }
+    awards: {  }
+    contact-us: {  }
+    important-links: {  }
+    rti: {  }
+    syllabus: {  }
+    pre-board-examinations: {  }
+    national-role-play: {  }

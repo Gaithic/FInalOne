@@ -1,0 +1,5 @@
+title: Slider
+modelClass: Netgen\Scert\Models\Slider
+nameFrom: slide_title
+toolbar:
+    buttons: reorder_toolbar

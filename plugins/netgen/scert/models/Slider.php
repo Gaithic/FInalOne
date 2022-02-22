@@ -1,13 +1,15 @@
 <?php namespace Netgen\Scert\Models;
 
 use Model;
+use Winter\Storm\Database\Traits\Sortable;
 
 /**
  * Model
  */
-class GlobalSetting extends Model
+class Slider extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use Sortable;
     
     /*
      * Disable timestamps by default.
@@ -19,19 +21,13 @@ class GlobalSetting extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'netgen_scert_global_settings';
+    public $table = 'netgen_scert_slider';
 
     /**
      * @var array Validation rules
      */
     public $rules = [
-        'email' => 'nullable|email',
-        'phone_number' =>'nullable|regex:/^[0-9\-\(\)\/\+\s]*$/|min:10'
     ];
 
-    // relations
-    public $attachOne = [
-        'site_logo' => 'System\Models\File',
-        'hp_logo' => 'System\Models\File',
-    ];
+  
 }

@@ -1,3 +1,15 @@
+==
+<?php
+	use Netgen\Scert\Models\Scholarship;
+
+	function onStart(){
+	$this['scholarships'] = Scholarship::get();
+	}
+
+?>
+
+==
+
 <div class="scholarship">
 	<div class="container">
 		<div class="row">
@@ -6,22 +18,25 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
-				<div class="text-one">
-					<div class="header-1">
-						<figure class="image-figure">
-							<img src="{{ 'assets/images/schems-1-GPS-Barram-40845768.jpg'|theme }}" alt="HPSCERT himachal pradesh"/>
-						</figure>
+			{% for scholarship in scholarships %}
+				<div class="col-lg-4">
+					<div class="text-one">
+						<div class="header-1">
+							<figure class="image-figure">
+								<img src="{{ scholarship.image|media }}" alt="HPSCERT himachal pradesh"/>
+							</figure>
+						</div>
+						<div class="body1">
+							<h5>{{ scholarship.title|raw }}</h5>
+							<p>{{ scholarship.description|raw }}
+							</p>
+						</div>
+						<a class="header-buttons" href="#">Read More</a>
 					</div>
-					<div class="body1">
-						<h5>Program  One</h5>
-						<p>Excepteur sint occaecat cupidatat non proident,veniam, quis nostrud exercitation ullamco laboris nisi 
-						</p>
-					</div>
-					<a class="header-buttons" href="#">Read More</a>
 				</div>
-			</div>
-			<div class="col-lg-4">
+			{% endfor %}
+			
+			<!-- <div class="col-lg-4">
 				<div class="text-one">
 					<div class="header-1">
 						<figure class="image-figure">
@@ -50,7 +65,7 @@
 					</div>
 					<a class="header-buttons" href="#">Read More</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

@@ -1,0 +1,11 @@
+name: Slider
+modelClass: Netgen\Scert\Models\Slider
+form: $/netgen/scert/models/slider/fields.yaml
+defaultRedirect: netgen/scert/slider
+create:
+    redirect: 'netgen/scert/slider/update/:id'
+    redirectClose: netgen/scert/slider
+update:
+    redirect: netgen/scert/slider
+    redirectClose: netgen/scert/slider
+preview: {  }

@@ -1,0 +1,9 @@
+columns:
+    id:
+        label: ID
+        type: text
+        searchable: true
+        sortable: true
+    titile:
+        label: title
+        type: text

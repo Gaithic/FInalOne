@@ -1,0 +1,23 @@
+fields:
+    slide_title:
+        label: Title
+        span: full
+        type: text
+    slide_image:
+        label: 'Slide Image'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        span: full
+        type: mediafinder
+    slide_image_mobile:
+        label: 'Slide image for Mobile'
+        mode: image
+        span: full
+        imageWidth: '100'
+        imageHeight: '100'
+        type: mediafinder
+    text_color:
+        label: 'Text Color'
+        span: full
+        type: colorpicker

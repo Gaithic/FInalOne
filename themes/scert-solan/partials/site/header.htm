@@ -1,9 +1,7 @@
 [viewBag]
 
 [staticMenu]
-
-[staticMenu staticMenu2]
-code = "about"
+code = "main"
 ==
 <div class="main-container">
     <div class="container-fluid">
@@ -16,47 +14,27 @@ code = "about"
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="signin">
-                    <a href="javascript:;"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span> | &nbsp;&nbsp;<i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;&nbsp;<i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="{{ configs.facebook_url }}"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span> | &nbsp;&nbsp; <a></a> <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;&nbsp;<i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="menu-header">
+    {% if staticMenu.menuItems %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#"><img src="{{ configs.site_logo.path }}" class="hp-scert-logo" alt="HPSCERT Logo"/><h2 class="head-text">{{ configs.site_name }}</h2></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mx-auto">
-                {% component 'staticMenu' %}
-                {% component 'staticMenu2' %}
-
-                {# <li class="nav-item active">
-                    {% component 'staticMenu' %}
-                </li>
-
-                <li class="nav-item active">
-                    {% component 'staticMenu2' %}
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cells</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Resources</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Awards</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a> #}
-                {# </li> #} 
+            <ul class="navbar-nav mx-auto"> <!-- mt-2 mt-lg-0 -->
+                {% for item in staticMenu.menuItems %}
+                    <li class="nav-item"><a class="nav-link" {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <img src="{{ configs.hp_logo.path }}" width="5%" alt="HPSCERT" class="hp-logo" />
     </nav>
+    {% endif %}
 </div>

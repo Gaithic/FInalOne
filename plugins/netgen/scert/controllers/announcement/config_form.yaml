@@ -1,0 +1,10 @@
+name: Announcement
+form: $/netgen/scert/models/announcement/fields.yaml
+modelClass: Netgen\Scert\Models\Announcement
+defaultRedirect: netgen/scert/announcement
+create:
+    redirect: 'netgen/scert/announcement/update/:id'
+    redirectClose: netgen/scert/announcement
+update:
+    redirect: netgen/scert/announcement
+    redirectClose: netgen/scert/announcement

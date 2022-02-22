@@ -1,0 +1,24 @@
+fields:
+    title:
+        label: Title
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    image:
+        label: Image
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        span: left
+        type: mediafinder
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor

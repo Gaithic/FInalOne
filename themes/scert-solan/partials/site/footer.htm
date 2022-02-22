@@ -1,23 +1,18 @@
+[staticMenu]
+code = "footer"
+
+[viewBag]
+==
 <div class="footer-menu">
-	<nav class="navbar navbar-expand-sm bg-light justify-content-center">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" href="#">Important Links |</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">RTI |</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Syllabus |</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Pre-Board Examinations |</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">National Role Play |</a>
-			</li>
-		</ul>
-	</nav>
+	{% if staticMenu.menuItems %}
+		<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+			<ul class="navbar-nav">
+				{% for item in staticMenu.menuItems %}
+					<li class="nav-item"><a class="nav-link" {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}">{{ item.title }} |</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+	{% endif %}
 </div>
 <!-- ...........footer-menu ends -->
 <!-- .........main-footer starts -->

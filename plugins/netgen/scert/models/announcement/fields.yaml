@@ -1,0 +1,20 @@
+fields:
+    titile:
+        label: Title
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        trigger:
+            action: ''
+            field: slug
+        preset:
+            field: titile
+            type: slug
+        type: text
+    announcement:
+        label: Announcement
+        size: large
+        span: full
+        type: richeditor
