@@ -3,7 +3,7 @@
 	use Netgen\Scert\Models\Announcement;
 
 	function onStart(){
-	$this['announcements'] = Announcement::get();
+	$this['announcements'] = Announcement::orderBy('date','desc')->get();
 	}
 ?>
 ==
@@ -18,7 +18,20 @@
 		<div class="row">
 			<div class="col-lg-12">
 				{% for announcement in announcements %}
-				<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.announcement|raw }}
+					<p>
+						{% if announcement.is_open_file ==0 %}
+							<a class="link-info" href="/announcement-detail/{{ announcement.slug }}">
+								<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
+								{# <img src="/storage/app/media/new-blinking.gif" height="5%" width="5%" class="img-thumbnail" alt=""> #}
+							</a>
+						{% else %}
+							<a class="link-info" target="_blank" href="{{ announcement.file|media }}">
+								<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
+							</a>
+						{% endif %}
+						
+					
+					</p>
 				{% endfor %}
 				<div class=" text-center">
 					<a class="header-buttons" href="#">Read More</a>

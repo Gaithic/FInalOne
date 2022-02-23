@@ -1,0 +1,37 @@
+title = "Announcement detail"
+url = "/announcement-detail/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Netgen\Scert\Models\Announcement"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "description"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 my-3">
+                    <h2 class="scholarship-text">Announcements /Notice-Board</h2>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-12 my-3">
+                        <div class="text-one">
+                            <div class="body1">
+                                <h5>{{ record.title }}</h5>
+                                <p>{{ record.description|raw}}</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

@@ -4,6 +4,9 @@ columns:
         type: text
         searchable: true
         sortable: true
-    titile:
-        label: title
+    title:
+        label: Title
         type: text
+    date:
+        label: Date
+        type: date

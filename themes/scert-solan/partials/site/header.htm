@@ -14,7 +14,14 @@ code = "main"
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="signin">
-                    <a href="{{ configs.facebook_url }}"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span> | &nbsp;&nbsp; <a></a> <i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;&nbsp;<i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp; 
+                    {% if configs.facebook_url %}
+                        <a href="{{ configs.facebook_url}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    {% endif %}
+                      &nbsp;&nbsp;
+                    {% if configs.twitter_url %}
+                        <a href="{{ configs.twitter_url}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    {% endif %}
                 </div>
             </div>
         </div>

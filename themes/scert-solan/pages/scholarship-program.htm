@@ -15,8 +15,29 @@ notFoundMessage = "Record not found"
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
 {% if record %}
-    {{ record.description|raw }}
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 my-3">
+                <h2 class="scholarship-text">Scholarship  Program</h2>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-12 my-3">
+                    <div class="text-one">
+                        <div class="header-1">
+                            <figure class="image-figure">
+                                <img src="{{ record.image|media }}" alt="{{ record.title }}" class="rounded mx-auto d-block"/>
+                            </figure>
+                        </div>
+                        <div class="body1">
+                            <h5>{{ record.title }}</h5>
+                            <p>{{ record.description|raw}}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 {% else %}
     {{ notFoundMessage }}
 {% endif %}
