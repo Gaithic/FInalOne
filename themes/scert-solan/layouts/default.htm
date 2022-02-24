@@ -40,7 +40,30 @@ function onStart(){
 
         <!-- Main Container -->
         <div class="main-app">
-            {% page %}
+            {% if this.page.id != 'homepage' %}
+                <div class="inner-background">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <h2>{{ this.page.title }}</h2>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="main-content mt-5">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="about-SCERT-content">
+                            {% page %}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            {% else %}
+                {% page %}
+            {% endif %}
         </div>
 
         <!-- Footer -->

@@ -1,13 +1,13 @@
+[viewBag]
 ==
 <?php
-	use Netgen\Scert\Models\Announcement;
+use Netgen\Scert\Models\Announcement;
 
 	function onStart(){
 	$this['announcements'] = Announcement::orderBy('date','desc')->get();
 	}
 ?>
 ==
-
 <div class="announcements">
 	<div class="container">
 		<div class="row">
@@ -29,12 +29,10 @@
 								<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
 							</a>
 						{% endif %}
-						
-					
 					</p>
 				{% endfor %}
 				<div class=" text-center">
-					<a class="header-buttons" href="#">Read More</a>
+					<a class="header-buttons" href="/all-announcements">Read More</a>
 				</div>
 			</div>
 		</div>

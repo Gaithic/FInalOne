@@ -7,4 +7,6 @@ columns:
         type: text
     image:
         label: Image
-        type: text
+        type: image
+        height: '100'
+        width: '250'

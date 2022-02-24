@@ -14,7 +14,7 @@ code = "main"
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="signin">
-                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp; 
+                    {# <a href="#"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp;  #}
                     {% if configs.facebook_url %}
                         <a href="{{ configs.facebook_url}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     {% endif %}
@@ -28,16 +28,37 @@ code = "main"
     </div>
 </div>
 <div class="menu-header">
+   
     {% if staticMenu.menuItems %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="{{ configs.site_logo.path }}" class="hp-scert-logo" alt="HPSCERT Logo"/><h2 class="head-text">{{ configs.site_name }}</h2></a>
+        <a class="navbar-brand" href="/"><img src="{{ configs.site_logo.path }}" class="hp-scert-logo" alt="HPSCERT Logo"/><h2 class="head-text">{{ configs.site_name }}</h2></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mx-auto"> <!-- mt-2 mt-lg-0 -->
+            <!-- <ul class="navbar-nav mx-auto"> 
                 {% for item in staticMenu.menuItems %}
-                    <li class="nav-item"><a class="nav-link" {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}">{{ item.title }}</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul> -->
+            
+            <ul class="navbar-nav mx-auto">
+                <li><a href="{{ '/'|app }}"><i class="typcn typcn-home"></i></a></li>
+                {% for item in staticMenu.menuItems %} 
+                <li class="nav-item {{ item.isActive or item.isChildActive ? 'active' : '' }}  {{ item.items ? 'dropdown' : '' }}">
+                    <a class="nav-link" title="{{ item.title }}" {% if item.items %} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#" {% else %} href="{{ item.url }}" {% endif %}>{% if item.items %} {{ item.title }} {% else %} {{ item.title }} {% endif %}</a>
+                        {% if item.items %}
+                        <ul class="dropdown-menu">
+                        {% for subitem in item.items %} 
+                            <li {% if subitem.viewBag.isExternal %} target="_blank" {% endif %}>
+                                <a class="nav-link" href="{{ subitem.url }}">{{ subitem.title }}</a>
+                            </li>
+                        {% endfor %} 
+                        </ul>
+                       {% endif %}
+                        </li>
                 {% endfor %}
             </ul>
         </div>

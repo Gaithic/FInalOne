@@ -1,0 +1,81 @@
+description = "Right Sidebar layout"
+
+[staticMenu]
+code = "main"
+
+[staticPage]
+useContent = 1
+default = 0
+==
+<?php
+use Netgen\Scert\Models\GlobalSetting;
+
+function onStart(){
+    $this['configs'] = GlobalSetting::where('id', 'settings')->first();
+}
+?>
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ configs.site_name }} - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="SCERT Solan">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="generator" content="SCERT Solan">
+        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+
+
+        {% styles %}
+    </head>
+    <body>
+
+        <!-- Header -->
+        {% partial 'site/header' %}
+
+        <!-- Main Container -->
+        <div class="main-app mb-4">
+            <div class="inner-background">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <h2>{{ this.page.title }}</h2>
+                    </div>
+                  </div>
+                   </div>
+              </div>
+              <div class="main-content mt-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-9 col-md-8 col-sm-8">
+                      <div class="about-SCERT-content">
+                        {% page %}
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        {% partial 'site/sidebar' %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <!-- Footer -->
+        {% partial 'site/footer' %}
+        
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/js/jquery.min.js',
+            'assets/js/popper.min.js',
+            'assets/js/bootstrap.bundle.min.js',
+        ] |theme }}"></script>
+        {% snowboard all %}
+        {% scripts %}
+    </body>
+</html>

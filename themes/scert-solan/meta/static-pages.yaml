@@ -1,5 +1,7 @@
 static-pages:
-    about-us: {  }
+    about-us:
+        about-us-history: {  }
+        about-us-mission: {  }
     cells: {  }
     resource: {  }
     awards: {  }

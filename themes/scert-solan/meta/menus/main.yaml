@@ -25,6 +25,29 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
+        items:
+            -
+                title: History
+                nesting: 1
+                type: static-page
+                code: ''
+                reference: about-us-history
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Mission
+                nesting: 1
+                type: static-page
+                code: ''
+                reference: about-us-mission
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Cells
         nesting: 0
@@ -55,8 +78,10 @@ items:
         title: Awards
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: awards
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -66,8 +91,10 @@ items:
         title: 'Contact Us'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: contact-us
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
