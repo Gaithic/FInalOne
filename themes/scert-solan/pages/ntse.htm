@@ -1,0 +1,49 @@
+title = "NTSE"
+url = "/ntse"
+layout = "default"
+is_hidden = 0
+==
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="70%">Title</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+{% put styles %}
+    <link href="{{ 'assets/css/jquery.dataTables.min.css'|theme }}" rel="stylesheet">
+{% endput %}
+
+{% put scripts %}
+<script src="{{ [
+    'assets/js/jquery.min.js',
+    'assets/js/jquery.dataTables.min.js',
+] |theme }}">
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        var table = $('.table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('all.ntse') }}",
+            columns: [
+                {data: 'title', name: 'title'},
+                {data: 'date', name: 'date'},
+                {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
+          ]
+        });
+    });
+
+
+</script>
+{% endput %}

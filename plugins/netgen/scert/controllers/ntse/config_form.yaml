@@ -1,0 +1,10 @@
+name: Ntse
+form: $/netgen/scert/models/ntse/fields.yaml
+modelClass: Netgen\Scert\Models\Ntse
+defaultRedirect: netgen/scert/ntse
+create:
+    redirect: 'netgen/scert/ntse/update/:id'
+    redirectClose: netgen/scert/ntse
+update:
+    redirect: netgen/scert/ntse
+    redirectClose: netgen/scert/ntse

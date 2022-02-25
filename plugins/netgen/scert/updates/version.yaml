@@ -63,3 +63,9 @@
 1.0.22:
     - 'Updated table netgen_scert_announcements'
     - builder_table_update_netgen_scert_announcements_5.php
+1.0.23:
+    - 'Created table netgen_scert_ntse'
+    - builder_table_create_netgen_scert_ntse.php
+1.0.24:
+    - 'Created table netgen_scert_nmms'
+    - builder_table_create_netgen_scert_nmms.php

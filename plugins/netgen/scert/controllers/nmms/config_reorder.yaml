@@ -1,0 +1,4 @@
+title: Nmms
+modelClass: Netgen\Scert\Models\Nmms
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: Nmms
+form: $/netgen/scert/models/nmms/fields.yaml
+modelClass: Netgen\Scert\Models\Nmms
+defaultRedirect: netgen/scert/nmms
+create:
+    redirect: 'netgen/scert/nmms/update/:id'
+    redirectClose: netgen/scert/nmms
+update:
+    redirect: netgen/scert/nmms
+    redirectClose: netgen/scert/nmms

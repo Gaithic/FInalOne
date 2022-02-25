@@ -30,8 +30,10 @@ items:
                 title: History
                 nesting: 1
                 type: static-page
+                url: null
                 code: ''
                 reference: about-us-history
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -41,8 +43,10 @@ items:
                 title: Mission
                 nesting: 1
                 type: static-page
+                url: null
                 code: ''
                 reference: about-us-mission
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -100,4 +104,40 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
+    -
+        title: 'Scholarship/ Examinations'
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: NTSE
+                type: cms-page
+                code: ''
+                reference: ntse
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: NMMS
+                nesting: 1
+                type: static-page
+                url: null
+                code: ''
+                reference: nmms
+                cmsPage: null
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
 name: Main

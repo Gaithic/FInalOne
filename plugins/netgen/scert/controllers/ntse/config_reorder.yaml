@@ -1,0 +1,4 @@
+title: Ntse
+modelClass: Netgen\Scert\Models\Ntse
+toolbar:
+    buttons: reorder_toolbar

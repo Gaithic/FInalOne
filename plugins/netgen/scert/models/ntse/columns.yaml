@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: ID
+        type: text
+        searchable: true
+        sortable: true
+    title:
+        label: Title
+        type: text
+    date:
+        label: Date
+        type: date

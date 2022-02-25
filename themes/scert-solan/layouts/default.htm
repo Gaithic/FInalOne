@@ -6,6 +6,9 @@ code = "main"
 [staticPage]
 useContent = 1
 default = 0
+
+[session]
+security = "all"
 ==
 <?php
 use Netgen\Scert\Models\GlobalSetting;
@@ -34,7 +37,7 @@ function onStart(){
         {% styles %}
     </head>
     <body>
-
+        
         <!-- Header -->
         {% partial 'site/header' %}
 

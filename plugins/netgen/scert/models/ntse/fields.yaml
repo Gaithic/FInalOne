@@ -7,28 +7,27 @@ fields:
         label: Slug
         span: full
         preset:
-            field: titile
+            field: title
             type: slug
         type: text
     is_open_file:
-        label: 'Upload File On click'
+        label: Switch
         span: auto
-        default: 0
         type: switch
+    date:
+        label: Date
+        mode: date
+        span: auto
+        type: datepicker
     description:
         label: Description
-        size: huge
+        size: large
         span: full
         trigger:
             action: hide
             field: is_open_file
             condition: checked
         type: richeditor
-    date:
-        label: 'Date picker'
-        mode: date
-        span: auto
-        type: datepicker
     file:
         label: File
         mode: file
