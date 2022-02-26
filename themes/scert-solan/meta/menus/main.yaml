@@ -120,22 +120,22 @@ items:
         items:
             -
                 title: NTSE
-                type: cms-page
+                nesting: null
+                type: url
+                url: /scholarship-announcement/1
                 code: ''
-                reference: ntse
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: NMMS
-                nesting: 1
-                type: static-page
-                url: null
+                type: url
+                url: /scholarship-announcement/2
                 code: ''
-                reference: nmms
-                cmsPage: null
-                replace: 0
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

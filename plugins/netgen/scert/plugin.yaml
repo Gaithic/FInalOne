@@ -26,11 +26,11 @@ navigation:
                 label: Announcements
                 url: netgen/scert/announcement
                 icon: icon-calendar
-            side-menu-item5:
-                label: NTSE
-                url: netgen/scert/ntse
-                icon: icon-mortar-board
             side-menu-item6:
-                label: NMMS
-                url: netgen/scert/nmms
-                icon: icon-newspaper-o
+                label: Category
+                url: netgen/scert/category
+                icon: icon-align-justify
+            side-menu-item5:
+                label: 'Scholarship Announcements'
+                url: netgen/scert/scholarshipannouncement
+                icon: icon-mortar-board

@@ -8,4 +8,4 @@ use Netgen\Scert\Models\Announcement;
 
 Route::get('/announcement-list', [AnnouncementController::class,'index'])->name('all.announcement');
 
-Route::get('/ntse-list', [NtseController::class,'index'])->name('all.ntse');
+Route::get('/ntse-list/{category_id}', [NtseController::class,'index'])->name('all.ntse');

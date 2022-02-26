@@ -1,0 +1,10 @@
+name: ScholarshipAnnouncement
+form: $/netgen/scert/models/scholarshipannouncement/fields.yaml
+modelClass: Netgen\Scert\Models\ScholarshipAnnouncement
+defaultRedirect: netgen/scert/scholarshipannouncement
+create:
+    redirect: 'netgen/scert/scholarshipannouncement/update/:id'
+    redirectClose: netgen/scert/scholarshipannouncement
+update:
+    redirect: netgen/scert/scholarshipannouncement
+    redirectClose: netgen/scert/scholarshipannouncement

@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class Nmms extends Model
+class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -19,7 +19,7 @@ class Nmms extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'netgen_scert_scholarship';
+    public $table = 'netgen_scert_categories';
 
     /**
      * @var array Validation rules

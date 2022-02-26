@@ -1,0 +1,10 @@
+name: Category
+form: $/netgen/scert/models/category/fields.yaml
+modelClass: Netgen\Scert\Models\Category
+defaultRedirect: netgen/scert/category
+create:
+    redirect: 'netgen/scert/category/update/:id'
+    redirectClose: netgen/scert/category
+update:
+    redirect: netgen/scert/category
+    redirectClose: netgen/scert/category

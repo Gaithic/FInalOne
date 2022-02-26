@@ -1,0 +1,4 @@
+title: Category
+modelClass: Netgen\Scert\Models\Category
+toolbar:
+    buttons: reorder_toolbar

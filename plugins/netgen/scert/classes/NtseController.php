@@ -4,6 +4,7 @@ namespace Netgen\Scert\Classes;
 use Backend\Classes\Controller;
 use Illuminate\Http\Request;
 use Netgen\Scert\Models\Ntse;
+use Netgen\Scert\Models\ScholarshipAnnouncement;
 use Yajra\DataTables\Facades\DataTables;
 
 class NtseController extends Controller{
@@ -13,9 +14,9 @@ class NtseController extends Controller{
      *  Index
      * 
      */
-    public function index(Request $request){
+    public function index(Request $request,$category_id){
         if($request->ajax()){
-            $query = Ntse::query();
+            $query = ScholarshipAnnouncement::query()->where('category_id',$category_id);
             return DataTables::of($query)
                     ->addColumn('action', function($row){
                         if($row->is_open_file == 0){
