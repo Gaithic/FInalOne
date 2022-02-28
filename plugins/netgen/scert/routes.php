@@ -1,11 +1,11 @@
 <?php
 
 use Netgen\Scert\Classes\AnnouncementController;
-use Netgen\Scert\Classes\NtseController;
+use Netgen\Scert\Classes\ScholarshipExaminationController;
 use Netgen\Scert\Models\Announcement;
 
 
 
 Route::get('/announcement-list', [AnnouncementController::class,'index'])->name('all.announcement');
 
-Route::get('/ntse-list/{category_id}', [NtseController::class,'index'])->name('all.ntse');
+Route::get('/ntse-list/{category_id}', [ScholarshipExaminationController::class,'index'])->name('all.ntse');

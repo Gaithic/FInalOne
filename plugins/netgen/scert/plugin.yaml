@@ -31,6 +31,6 @@ navigation:
                 url: netgen/scert/category
                 icon: icon-align-justify
             side-menu-item5:
-                label: 'Scholarship Announcements'
-                url: netgen/scert/scholarshipannouncement
+                label: 'Scholarship Examination'
+                url: netgen/scert/scholarshipexamination
                 icon: icon-mortar-board

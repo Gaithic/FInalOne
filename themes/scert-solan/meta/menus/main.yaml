@@ -93,13 +93,9 @@ items:
             isExternal: '1'
     -
         title: 'Contact Us'
-        nesting: 0
-        type: static-page
-        url: null
+        type: cms-page
         code: ''
         reference: contact-us
-        cmsPage: null
-        replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -122,7 +118,7 @@ items:
                 title: NTSE
                 nesting: null
                 type: url
-                url: /scholarship-announcement/1
+                url: /scholarship-examination/1
                 code: ''
                 reference: null
                 cmsPage: null
@@ -133,9 +129,13 @@ items:
                     isExternal: '0'
             -
                 title: NMMS
+                nesting: null
                 type: url
-                url: /scholarship-announcement/2
+                url: /scholarship-examination/2
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

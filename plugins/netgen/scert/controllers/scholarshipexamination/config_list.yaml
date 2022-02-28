@@ -1,0 +1,12 @@
+list: $/netgen/scert/models/scholarshipexamination/columns.yaml
+modelClass: Netgen\Scert\Models\ScholarshipExamination
+title: ScholarshipExamination
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'netgen/scert/scholarshipexamination/update/:id'

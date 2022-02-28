@@ -7,7 +7,7 @@ fields:
         label: Slug
         span: full
         preset:
-            field: titile
+            field: title
             type: slug
         type: text
     is_open_file:

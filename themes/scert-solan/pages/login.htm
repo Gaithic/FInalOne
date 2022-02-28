@@ -7,6 +7,40 @@ is_hidden = 0
 paramCode = "code"
 forceSecure = 0
 requirePassword = 0
+
+[session]
+security = "guest"
+redirect = "scholarship-form"
+
+[sitecaptcha]
+type = "math"
+showrefresh = "show"
+iconclass = "icon-refresh"
+==
+<?php
+function onTest()
+{
+
+    $rules = ['captcha' => 'required|captcha_api:'. Session::get('captcha.key')];
+
+    $messages = [
+            'captcha.captcha_api' => 'wrong captcha',
+        ];
+
+    $validator = validator()->make(request()->all(), $rules, $messages);
+
+    if ($validator->fails()) {
+
+        throw new ValidationException($validator);
+
+    } else {
+
+        Flash::success('Success');
+
+    }
+
+}
+?>
 ==
 {% if not user %}
 
@@ -14,7 +48,45 @@ requirePassword = 0
 
         <div class="col-md-6">
             <h3>Login</h3>
-            {% partial account ~ '::signin' %}
+            {{ form_ajax('onSignin') }}
+
+<div class="form-group">
+    <label for="userSigninLogin">{{ loginAttributeLabel }}</label>
+    <input
+        name="login"
+        type="text"
+        class="form-control"
+        id="userSigninLogin"
+        placeholder="Enter your {{ loginAttributeLabel|lower }}" />
+</div>
+
+<div class="form-group">
+    <label for="userSigninPassword">Password</label>
+    <input
+        name="password"
+        type="password"
+        class="form-control"
+        id="userSigninPassword"
+        placeholder="Enter your password" />
+</div>
+
+
+{% if rememberLoginMode == 'ask' %}
+<div class="form-group">
+    <div class="checkbox">
+    <label><input name="remember" type="checkbox" value="1">Stay logged in</label>
+    </div>
+</div>
+{% endif %}
+
+<button type="submit" class="btn btn-default">Sign in</button>
+<p class="small fw-bold mt-2 pt-1 mb-0"><a href="/reset-password"
+            class="link-danger">Forgot Your Password?</a></p>
+<p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+            class="link-danger">Register</a></p>
+
+{{ form_close() }}
+
             
         </div>
     </div>
