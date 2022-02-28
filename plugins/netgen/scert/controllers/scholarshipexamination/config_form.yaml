@@ -1,0 +1,10 @@
+name: ScholarshipExamination
+form: $/netgen/scert/models/scholarshipexamination/fields.yaml
+modelClass: Netgen\Scert\Models\ScholarshipExamination
+defaultRedirect: netgen/scert/scholarshipexamination
+create:
+    redirect: 'netgen/scert/scholarshipexamination/update/:id'
+    redirectClose: netgen/scert/scholarshipexamination
+update:
+    redirect: netgen/scert/scholarshipexamination
+    redirectClose: netgen/scert/scholarshipexamination

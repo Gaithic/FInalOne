@@ -73,3 +73,9 @@ tabs:
             span: full
             type: richeditor
             tab: Home
+        contact_us:
+            label: 'Contact Us'
+            span: full
+            size: large
+            type: richeditor
+            tab: 'Contact Us'

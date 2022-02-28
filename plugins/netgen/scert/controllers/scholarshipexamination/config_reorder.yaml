@@ -1,0 +1,4 @@
+title: ScholarshipExamination
+modelClass: Netgen\Scert\Models\ScholarshipExamination
+toolbar:
+    buttons: reorder_toolbar

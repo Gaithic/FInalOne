@@ -20,6 +20,15 @@
             placeholder="Enter your password" />
     </div>
 
+   <div class="form-group">
+    {% component 'sitecaptcha' %}
+  </div>
+
+  <div class="form-group">
+    <label for="pwd">Captcha:</label>
+    <input class="form-control" type="text" name="captcha"/>
+  </div>
+
     {% if rememberLoginMode == 'ask' %}
     <div class="form-group">
         <div class="checkbox">
@@ -29,5 +38,9 @@
     {% endif %}
 
     <button type="submit" class="btn btn-default">Sign in</button>
+    <p class="small fw-bold mt-2 pt-1 mb-0"><a href="/reset-password"
+                class="link-danger">Forgot Your Password?</a></p>
+    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+                class="link-danger">Register</a></p>
 
 {{ form_close() }}

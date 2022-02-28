@@ -1,0 +1,4 @@
+title: ScholarshipAnnouncement
+modelClass: Netgen\Scert\Models\ScholarshipAnnouncement
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,60 @@
+title = "Contact Us"
+url = "/contact-us"
+layout = "default"
+is_hidden = 0
+==
+
+<!-- start contact form -->
+{{ configs.contact_us |raw }}
+<section>
+			<!-- contact form -->
+            <form
+                data-request="onDoSomething"
+                data-request-validate
+                data-request-flash >
+			<div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+				<!-- Name -->
+				<div class="form-group label-floating">
+					<label class="control-label" for="name">Name</label> &nbsp;
+					<input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="">
+					<span data-validate-for="name"></span>
+                    <div class="help-block with-errors">
+						<br>
+					</div></div>
+				<!-- email -->
+				<div class="form-group label-floating">
+					<label class="control-label" for="email">Email</label> &nbsp;
+					<input class="form-control" id="email" type="email" name="email" required="" data-error="Please enter your Email" value="">
+					<span data-validate-for="email"></span>
+                    <div class="help-block with-errors">
+						<br>
+					</div></div>
+				<!-- Subject -->
+				<div class="form-group label-floating">
+					<label class="control-label">Subject</label> &nbsp;
+					<input class="form-control" id="msg_subject" type="text" name="subject" required="" data-error="Please enter your message subject" value="">
+					<span data-validate-for="subject"></span>
+                    <div class="help-block with-errors">
+						<br>
+					</div></div>
+				<!-- Message -->
+				<div class="form-group label-floating">
+					<label class="control-label" for="message">Message</label>
+					<textarea class="form-control" rows="3" id="message" name="message" required="" data-error="Write your message" value=""></textarea>
+					<span data-validate-for="message"></span>
+                    <div class="help-block with-errors">
+						<br>
+					</div></div>
+				<!-- Form Submit -->
+				<div class="form-submit mt-4">
+					<button class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Send Message</span></button>
+					<div class="h3 text-center hidden" id="msgSubmit">
+						<br>
+					</div>
+					<div class="clearfix">
+						<br>
+					</div>
+                </div>
+            </div>
+</section>
+<!-- end of  start contact form -->

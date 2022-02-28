@@ -23,10 +23,10 @@ code = "footer"
 				<span><i class="fa fa-map-marker" aria-hidden="true"></i> {{ configs.address|raw }}</span>
 			</div>
 			<div class="col-lg-4">
-				<span><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ configs.email }}</span>
+				<a href="mailto:{{ configs.email }}"><span><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ configs.email }}</span></a>
 			</div>
 			<div class="col-lg-4">
-				<span><i class="fa fa-phone" aria-hidden="true"></i> {{ configs.phone_number }}</span>
+				<a href="tel:{{ configs.phone_number }}"><span><i class="fa fa-phone" aria-hidden="true"></i> {{ configs.phone_number }}</span></a>
 			</div>
 		</div>
 		<div class="row">

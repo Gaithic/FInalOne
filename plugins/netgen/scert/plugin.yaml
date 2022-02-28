@@ -26,3 +26,11 @@ navigation:
                 label: Announcements
                 url: netgen/scert/announcement
                 icon: icon-calendar
+            side-menu-item6:
+                label: Category
+                url: netgen/scert/category
+                icon: icon-align-justify
+            side-menu-item5:
+                label: 'Scholarship Examination'
+                url: netgen/scert/scholarshipexamination
+                icon: icon-mortar-board

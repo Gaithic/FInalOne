@@ -30,8 +30,10 @@ items:
                 title: History
                 nesting: 1
                 type: static-page
+                url: null
                 code: ''
                 reference: about-us-history
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -41,8 +43,10 @@ items:
                 title: Mission
                 nesting: 1
                 type: static-page
+                url: null
                 code: ''
                 reference: about-us-mission
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -89,15 +93,51 @@ items:
             isExternal: '1'
     -
         title: 'Contact Us'
-        nesting: 0
-        type: static-page
-        url: null
+        type: cms-page
         code: ''
         reference: contact-us
-        cmsPage: null
-        replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
+    -
+        title: 'Scholarship/ Examinations'
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: NTSE
+                nesting: null
+                type: url
+                url: /scholarship-examination/1
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: NMMS
+                nesting: null
+                type: url
+                url: /scholarship-examination/2
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
 name: Main

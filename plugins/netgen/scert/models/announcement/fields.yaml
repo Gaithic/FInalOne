@@ -7,11 +7,11 @@ fields:
         label: Slug
         span: full
         preset:
-            field: titile
+            field: title
             type: slug
         type: text
     is_open_file:
-        label: 'Open File On click?'
+        label: 'Upload File On click'
         span: auto
         default: 0
         type: switch
@@ -26,8 +26,8 @@ fields:
         type: richeditor
     date:
         label: 'Date picker'
-        span: auto
         mode: date
+        span: auto
         type: datepicker
     file:
         label: File

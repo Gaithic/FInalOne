@@ -1,0 +1,39 @@
+fields:
+    title:
+        label: Title
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        preset:
+            field: title
+            type: slug
+        type: text
+    is_open_file:
+        label: Switch
+        span: auto
+        type: switch
+    date:
+        label: Date
+        mode: date
+        span: auto
+        type: datepicker
+    description:
+        label: Description
+        size: large
+        span: full
+        trigger:
+            action: hide
+            field: is_open_file
+            condition: checked
+        type: richeditor
+    file:
+        label: File
+        mode: file
+        span: auto
+        trigger:
+            action: show
+            field: is_open_file
+            condition: checked
+        type: mediafinder

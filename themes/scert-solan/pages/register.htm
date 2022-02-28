@@ -1,0 +1,30 @@
+title = "Register"
+url = "/register"
+layout = "right-sidebar"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+
+[session]
+security = "guest"
+redirect = "scholarship-form"
+==
+{% if not user %}
+
+    <div class="row">
+
+
+        <div class="col-md-6">
+            {% partial account ~ '::register' %}
+            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="/login"  
+                class="link-danger">Login</a></p>
+        </div>
+        
+    </div>
+
+{% else %}
+    
+{% endif %}
