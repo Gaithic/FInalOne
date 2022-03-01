@@ -79,3 +79,8 @@ tabs:
             size: large
             type: richeditor
             tab: 'Contact Us'
+        contact_email:
+            label: 'Contact Email'
+            span: auto
+            type: text
+            tab: 'Contact Us'

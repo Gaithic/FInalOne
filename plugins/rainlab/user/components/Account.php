@@ -17,6 +17,7 @@ use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Models\Settings as UserSettings;
 use Exception;
+use Illuminate\Support\Facades\Session;
 
 /**
  * Account component
@@ -200,7 +201,7 @@ class Account extends ComponentBase
                 : 'required|email|between:6,255';
 
             $rules['password'] = 'required|between:4,255';
-
+            $rules['captcha'] = 'required|captcha_api:'. Session::get('captcha.key');
             if (!array_key_exists('login', $data)) {
                 $data['login'] = post('username', post('email'));
             }
