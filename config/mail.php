@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.mailgun.org',
+    'host' => 'smtp.eu.mailgun.org',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'noreply@domain.tld',
-        'name'    => 'Winter CMS',
+        'address' => 'noreply@netgen.in',
+        'name'    => 'SCERT',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => null,
+    'username' => "noreply@mg.netgen.work",
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => null,
+    'password' => "0bea542a3c3a1db764eb3aa35343ce52-e5da0167-845aa158",
 
     /*
     |--------------------------------------------------------------------------
