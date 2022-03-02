@@ -1,0 +1,10 @@
+name: School
+form: $/netgen/examinations/models/school/fields.yaml
+modelClass: Netgen\Examinations\Models\School
+defaultRedirect: netgen/examinations/school
+create:
+    redirect: 'netgen/examinations/school/update/:id'
+    redirectClose: netgen/examinations/school
+update:
+    redirect: netgen/examinations/school
+    redirectClose: netgen/examinations/school

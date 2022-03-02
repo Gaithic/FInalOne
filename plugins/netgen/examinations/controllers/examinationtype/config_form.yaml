@@ -1,0 +1,10 @@
+name: ExaminationType
+form: $/netgen/examinations/models/examinationtype/fields.yaml
+modelClass: Netgen\Examinations\Models\ExaminationType
+defaultRedirect: netgen/examinations/examinationtype
+create:
+    redirect: 'netgen/examinations/examinationtype/update/:id'
+    redirectClose: netgen/examinations/examinationtype
+update:
+    redirect: netgen/examinations/examinationtype
+    redirectClose: netgen/examinations/examinationtype
