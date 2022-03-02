@@ -93,9 +93,13 @@ items:
             isExternal: '1'
     -
         title: Contact
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: contact-us
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -116,26 +120,18 @@ items:
         items:
             -
                 title: NTSE
-                nesting: null
                 type: url
                 url: /scholarship-examination/1
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: NMMS
-                nesting: null
                 type: url
                 url: /scholarship-examination/2
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

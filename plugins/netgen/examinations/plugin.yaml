@@ -1,0 +1,20 @@
+plugin:
+    name: 'netgen.examinations::lang.plugin.name'
+    description: 'netgen.examinations::lang.plugin.description'
+    author: Netgen
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Scholarship Examination form'
+        url: netgen/examinations/school
+        icon: icon-mortar-board
+        sideMenu:
+            side-menu-item:
+                label: School
+                url: netgen/examinations/school
+                icon: icon-building-o
+            side-menu-item2:
+                label: 'Examination Type'
+                url: netgen/examinations/examinationtype
+                icon: icon-cubes

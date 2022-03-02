@@ -1,0 +1,4 @@
+title: School
+modelClass: Netgen\Examinations\Models\School
+toolbar:
+    buttons: reorder_toolbar

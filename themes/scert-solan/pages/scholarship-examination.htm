@@ -47,7 +47,7 @@ function onEnd() {
         var table = $('.table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "/ntse-list/{{ category_id }}",
+            ajax: "/announcement-examination-list/{{ category_id }}",
             columns: [
                 {data: 'title', name: 'title', render:function(data, type, row){
                     if(row.is_open_file == 0){

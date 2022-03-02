@@ -1,0 +1,4 @@
+title: ExaminationType
+modelClass: Netgen\Examinations\Models\ExaminationType
+toolbar:
+    buttons: reorder_toolbar

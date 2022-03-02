@@ -1,0 +1,32 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table netgen_examinations_form'
+    - builder_table_create_netgen_examinations_form.php
+1.0.3:
+    - 'Created table netgen_examinations_type'
+    - builder_table_create_netgen_examinations_type.php
+1.0.4:
+    - 'Created table netgen_examinations_schools'
+    - builder_table_create_netgen_examinations_schools.php
+1.0.5:
+    - 'Updated table netgen_examinations_schools'
+    - builder_table_update_netgen_examinations_schools.php
+1.0.6:
+    - 'Updated table netgen_examinations_type'
+    - builder_table_update_netgen_examinations_type.php
+1.0.7:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form.php
+1.0.8:
+    - 'Updated table netgen_examinations_schools'
+    - builder_table_update_netgen_examinations_schools_2.php
+1.0.9:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form_2.php
+1.0.10:
+    - 'Updated table netgen_examinations_type'
+    - builder_table_update_netgen_examinations_type_2.php
+1.0.11:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form_3.php
