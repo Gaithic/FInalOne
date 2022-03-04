@@ -20,6 +20,8 @@ class ExaminationForm extends ComponentBase
             'description'=> 'Enter examination data'
         ];
     }
+
+
     public function onSave(){
         $data = post();
         $rules = [
@@ -29,13 +31,12 @@ class ExaminationForm extends ComponentBase
                 'sex' => 'required',
                 'medium_of_examination' => 'required',
                 'mobile_number_of_parent' => 'required',
-                'roll_number' => 'required|unique:roll_number',
+                'roll_number' => 'required|unique:netgen_examinations_form,roll_number',
                 'school_type_id' => 'required',
                 'examination_type_id' => 'required'
             ];
-
         $validator = Validator::make($data, $rules);
-        
+
         if($validator->fails()){
             throw new ValidationException($validator);
         }else{

@@ -61,7 +61,7 @@ return [
             'port'           => 3306,
             'database'       => 'scert',
             'username'       => 'scert',
-            'password'       => '8knUBKzin5lRkGY',
+            'password'       => 'YZWeDKj7P2vTymmxEkSC',
             'charset'        => 'utf8mb4',
             'collation'      => 'utf8mb4_unicode_ci',
             'prefix'         => '',
