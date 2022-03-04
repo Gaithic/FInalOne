@@ -4,3 +4,8 @@ plugin:
     author: Netgen
     icon: oc-icon-adjust
     homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Contact Forms'
+        url: netgen/contact/contactform
+        icon: icon-question-circle

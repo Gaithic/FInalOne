@@ -1,0 +1,4 @@
+title: ContactForm
+modelClass: Netgen\Contact\Models\ContactForm
+toolbar:
+    buttons: reorder_toolbar
