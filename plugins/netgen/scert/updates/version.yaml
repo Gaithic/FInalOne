@@ -129,3 +129,6 @@
 1.0.44:
     - 'Updated table netgen_scert_global_settings'
     - builder_table_update_netgen_scert_global_settings_14.php
+1.0.45:
+    - 'Updated table netgen_scert_global_settings'
+    - builder_table_update_netgen_scert_global_settings_13.php
