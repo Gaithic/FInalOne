@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Input;
 use Netgen\Examinations\Models\ExamForm;
+use Netgen\Examinations\Models\ExaminationType;
+use Netgen\Examinations\Models\School;
 use Netgen\Scert\Models\GlobalSetting;
 use Winter\Storm\Exception\ValidationException;
 
@@ -19,6 +21,7 @@ class ExaminationForm extends ComponentBase
         ];
     }
 
+
     public function onSave(){
         $data = post();
         $rules = [
@@ -28,12 +31,12 @@ class ExaminationForm extends ComponentBase
                 'sex' => 'required',
                 'medium_of_examination' => 'required',
                 'mobile_number_of_parent' => 'required',
-                'roll_number' => 'required',
-
+                'roll_number' => 'required|unique:netgen_examinations_form,roll_number',
+                'school_type_id' => 'required',
+                'examination_type_id' => 'required'
             ];
-
         $validator = Validator::make($data, $rules);
-        
+
         if($validator->fails()){
             throw new ValidationException($validator);
         }else{
@@ -45,12 +48,26 @@ class ExaminationForm extends ComponentBase
             $examForm->mobile_number_of_parent = Input::get('mobile_number_of_parent');
             $examForm->roll_number = Input::get('roll_number');
             $examForm->sex = Input::get('sex');
-
+            $examForm->school_type_id = Input::get('school_type_id');
+            $examForm->examination_type_id = Input::get('examination_type_id');
             $examForm->save();    
-
         }
-        
-        
+       
+    }
+     /**
+     * List of School name 
+     * 
+     */
+    public function schoolList(){
+        $schoolname = School::get();
+        return $schoolname;
+    }
+    /**
+     * List of examination
+     */
+    public function examinationList(){
+        $examinationList = ExaminationType::get();
+        return $examinationList;
     }
 
 

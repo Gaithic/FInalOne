@@ -1,13 +1,42 @@
 <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
-
         <form
         data-request="onSave"
         data-request-validate
         data-request-flash class="fadeInRight" >
-            
+        {% if __SELF__.schoolList %}
+        <div class="form-group label-floating">
+            <label for="correct_answer">School Name</label>
+            <select class="form-control" id="id" name="school_type_id">
+                <option value="">Select School Name</option>
+                {% for school in __SELF__.schoolList %}
+                    <option value="{{ school.id }}">{{ school.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% else %}
+            <div class="alert alert-primary col-md-6" role="alert">
+                <strong>There is no School to choose</strong>
+            </div>
+        {% endif %}
+
+        {% if __SELF__.examinationList %}
+        <div class="form-group label-floating">
+            <label for="correct_answer">Scholarship Examination Type</label>
+            <select class="form-control" id="id" name="examination_type_id">
+                <option value="">Select Scholarship examination type</option>
+                {% for examination in __SELF__.examinationList %}
+                    <option value="{{ examination.id }}">{{ examination.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% else %}
+            <div class="alert alert-primary col-md-6" role="alert">
+                <strong>There is no scholarship examination type to choose</strong>
+            </div>
+        {% endif %}
         <div class="form-group label-floating">
             <label class="control-label" for="name">Name</label> &nbsp;
-            <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="">
+            <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
             <span data-validate-for="name">Enter your Name</span>
             <div class="help-block with-errors">
                 <br>
@@ -16,7 +45,7 @@
 
         <div class="form-group label-floating">
             <label class="control-label" for="roll_number">School Roll Number</label> &nbsp;
-            <input class="form-control" id="roll_number" type="number" name="roll_number" required="" data-error="Please enter your Roll Number" value="">
+            <input class="form-control" id="roll_number" type="text" name="roll_number" required="" data-error="Please enter your Roll Number" value="{{ form_value('roll_number') }}">
             <span data-validate-for="roll_number"></span>
             <div class="help-block with-errors">
                 <br>
@@ -24,7 +53,7 @@
         </div>
         <div class="form-group label-floating">
             <label class="control-label">Father's Name</label> &nbsp;
-            <input class="form-control" id="father_name" type="text" name="father_name" required="" data-error="Please enter your Father Name" value="">
+            <input class="form-control" id="father_name" type="text" name="father_name" required="" data-error="Please enter your Father Name" value="{{ form_value('father_name') }}">
             <span data-validate-for="father_name"></span>
             <div class="help-block with-errors">
                 <br>
@@ -32,7 +61,7 @@
         </div>
         <div class="form-group label-floating">
             <label class="control-label">Mother's Name</label> &nbsp;
-            <input class="form-control" id="mother_name" type="text" name="mother_name" required="" data-error="Please enter your Father Name" value="">
+            <input class="form-control" id="mother_name" type="text" name="mother_name" required="" data-error="Please enter your Father Name" value="{{ form_value('mother_name') }}">
             <span data-validate-for="mother_name"></span>
             <div class="help-block with-errors">
                 <br>
@@ -40,7 +69,7 @@
         </div>
         <div class="form-group label-floating">
             <label class="control-label" for="roll_number">Parent Mobile Number</label> &nbsp;
-            <input class="form-control" id="mobile_number_of_parent" type="number" name="mobile_number_of_parent" required="" data-error="Please enter your parent number" value="">
+            <input class="form-control" id="mobile_number_of_parent" type="number" name="mobile_number_of_parent" required="" data-error="Please enter your parent number" value="{{ form_value('mobile_number_of_parent') }}">
             <span data-validate-for="mobile_number_of_parent"></span>
             <div class="help-block with-errors">
                 <br>
@@ -69,11 +98,9 @@
             <div class="help-block with-errors">
                 <br>
             </div>
-        </div>
-        
-         
+        </div>    
         <div class="form-submit mt-4">
-            <button data-attach-loading class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Send Message</span></button>
+            <button data-attach-loading class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Submit</span></button>
             <div class="h3 text-center hidden" id="msgSubmit">
                 <br>
             </div>
