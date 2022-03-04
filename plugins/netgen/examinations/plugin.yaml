@@ -18,3 +18,7 @@ navigation:
                 label: 'Examination Type'
                 url: netgen/examinations/examinationtype
                 icon: icon-cubes
+            side-menu-item3:
+                label: 'Examination Form'
+                url: netgen/examinations/examinationform
+                icon: icon-file-text-o

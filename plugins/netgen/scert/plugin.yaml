@@ -9,6 +9,8 @@ navigation:
         label: 'Scert Solan'
         url: netgen/scert/globalsetting/update/settings
         icon: icon-home
+        permissions:
+            - Manage_SCERT
         sideMenu:
             side-menu-item:
                 label: 'Global Settings'
@@ -34,3 +36,7 @@ navigation:
                 label: 'Scholarship Examination'
                 url: netgen/scert/scholarshipexamination
                 icon: icon-mortar-board
+permissions:
+    Manage_SCERT:
+        tab: SCERT
+        label: 'Manage SCERT'

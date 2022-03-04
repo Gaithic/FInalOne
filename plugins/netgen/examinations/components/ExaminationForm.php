@@ -10,6 +10,7 @@ use Netgen\Examinations\Models\ExaminationType;
 use Netgen\Examinations\Models\School;
 use Netgen\Scert\Models\GlobalSetting;
 use Winter\Storm\Exception\ValidationException;
+use Winter\Storm\Support\Facades\Flash;
 
 class ExaminationForm extends ComponentBase
 {
@@ -50,7 +51,8 @@ class ExaminationForm extends ComponentBase
             $examForm->sex = Input::get('sex');
             $examForm->school_type_id = Input::get('school_type_id');
             $examForm->examination_type_id = Input::get('examination_type_id');
-            $examForm->save();    
+            $examForm->save();   
+            Flash::success('Form has been submitted!'); 
         }
        
     }

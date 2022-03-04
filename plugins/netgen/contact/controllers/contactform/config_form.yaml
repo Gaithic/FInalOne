@@ -1,0 +1,10 @@
+name: ContactForm
+form: $/netgen/contact/models/contactform/fields.yaml
+modelClass: Netgen\Contact\Models\ContactForm
+defaultRedirect: netgen/contact/contactform
+create:
+    redirect: 'netgen/contact/contactform/update/:id'
+    redirectClose: netgen/contact/contactform
+update:
+    redirect: netgen/contact/contactform
+    redirectClose: netgen/contact/contactform

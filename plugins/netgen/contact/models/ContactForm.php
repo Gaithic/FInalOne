@@ -1,11 +1,11 @@
-<?php namespace Netgen\Examinations\Models;
+<?php namespace Netgen\Contact\Models;
 
 use Model;
 
 /**
  * Model
  */
-class ExamForm extends Model
+class ContactForm extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -19,16 +19,11 @@ class ExamForm extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'netgen_examinations_form';
+    public $table = 'netgen_contact_form';
 
     /**
      * @var array Validation rules
      */
     public $rules = [
-    ];
-
-    public $belongsTo = [
-        'school' => School::class,
-        'examination' => ExaminationType::class
     ];
 }

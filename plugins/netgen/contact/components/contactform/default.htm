@@ -5,7 +5,14 @@
         data-request="onSend"
         data-request-validate
         data-request-flash class="fadeInRight" data-request-complete="updateCaptcha()">
-            
+        {% flash %}
+        <p
+            data-control="flash-message"
+            class="flash-message fade {{ type }}"
+            data-interval="5">
+            {{ message }}
+        </p>
+        {% endflash %}
         <div class="form-group label-floating">
             <label class="control-label" for="name">Name</label> &nbsp;
             <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="">

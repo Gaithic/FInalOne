@@ -1,2 +1,5 @@
 1.0.1:
-    - Initialize plugin.
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table netgen_contact_form'
+    - builder_table_create_netgen_contact_form.php

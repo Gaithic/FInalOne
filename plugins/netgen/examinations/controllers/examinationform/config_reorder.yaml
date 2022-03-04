@@ -1,0 +1,4 @@
+title: ExaminationForm
+modelClass: Netgen\Examinations\Models\ExamForm
+toolbar:
+    buttons: reorder_toolbar

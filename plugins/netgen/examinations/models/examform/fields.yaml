@@ -1,0 +1,41 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    father_name:
+        label: 'Father Name'
+        span: auto
+        type: text
+    mother_name:
+        label: 'Mother Name'
+        span: auto
+        type: text
+    sex:
+        label: Gender
+        span: auto
+        type: text
+    medium_of_examination:
+        label: 'Medium of Examination'
+        span: auto
+        type: text
+    mobile_number_of_parent:
+        label: 'Parents Mobile Number'
+        span: auto
+        type: text
+    roll_number:
+        label: 'Roll Number'
+        span: auto
+        type: text
+    school:
+        label: School
+        nameFrom: name
+        descriptionFrom: name
+        span: auto
+        type: relation
+    examination:
+        label: 'Examination Type'
+        nameFrom: name
+        descriptionFrom: name
+        span: auto
+        type: relation

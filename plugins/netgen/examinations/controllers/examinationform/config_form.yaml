@@ -1,0 +1,10 @@
+name: ExaminationForm
+form: $/netgen/examinations/models/examform/fields.yaml
+modelClass: Netgen\Examinations\Models\ExamForm
+defaultRedirect: netgen/examinations/examinationform
+create:
+    redirect: 'netgen/examinations/examinationform/update/:id'
+    redirectClose: netgen/examinations/examinationform
+update:
+    redirect: netgen/examinations/examinationform
+    redirectClose: netgen/examinations/examinationform

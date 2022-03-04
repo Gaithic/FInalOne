@@ -3,6 +3,14 @@
         data-request="onSave"
         data-request-validate
         data-request-flash class="fadeInRight" >
+        {% flash %}
+            <p
+                data-control="flash-message"
+                class="flash-message fade {{ type }}"
+                data-interval="5">
+                {{ message }}
+            </p>
+        {% endflash %}
         {% if __SELF__.schoolList %}
         <div class="form-group label-floating">
             <label for="correct_answer">School Name</label>
@@ -12,6 +20,10 @@
                     <option value="{{ school.id }}">{{ school.name }}</option>
                 {% endfor %}
             </select>
+            <span data-validate-for="school_type_id" data-validate-error>Select your School</span>
+            <div class="help-block with-errors">
+                <br>
+            </div>
         </div>
         {% else %}
             <div class="alert alert-primary col-md-6" role="alert">
@@ -28,6 +40,10 @@
                     <option value="{{ examination.id }}">{{ examination.name }}</option>
                 {% endfor %}
             </select>
+            <span data-validate-for="name">Enter your Examination Type</span>
+            <div class="help-block with-errors">
+                <br>
+            </div>
         </div>
         {% else %}
             <div class="alert alert-primary col-md-6" role="alert">
@@ -82,7 +98,7 @@
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
-            <span data-validate-for=""></span>
+            <span data-validate-for="sex"></span>
             <div class="help-block with-errors">
                 <br>
             </div>
@@ -94,7 +110,7 @@
                 <option value="male">English</option>
                 <option value="female">Hindi</option>
             </select>
-            <span data-validate-for=""></span>
+            <span data-validate-for="medium_of_examination"></span>
             <div class="help-block with-errors">
                 <br>
             </div>

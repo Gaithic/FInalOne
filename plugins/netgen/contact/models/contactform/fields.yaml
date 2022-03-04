@@ -1,0 +1,18 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    email:
+        label: Email
+        span: auto
+        type: text
+    subject:
+        label: Subject
+        span: auto
+        type: text
+    content:
+        label: Content
+        span: full
+        size: large
+        type: richeditor
