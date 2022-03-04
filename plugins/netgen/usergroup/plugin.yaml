@@ -1,0 +1,6 @@
+plugin:
+    name: 'netgen.usergroup::lang.plugin.name'
+    description: 'netgen.usergroup::lang.plugin.description'
+    author: Netgen
+    icon: oc-icon-group
+    homepage: ''

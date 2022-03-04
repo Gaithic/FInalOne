@@ -9,3 +9,9 @@ navigation:
         label: 'Contact Forms'
         url: netgen/contact/contactform
         icon: icon-question-circle
+        permissions:
+            - manage_contact
+permissions:
+    manage_contact:
+        tab: Contact
+        label: 'Manage Contact'

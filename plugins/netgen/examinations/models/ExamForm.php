@@ -26,4 +26,9 @@ class ExamForm extends Model
      */
     public $rules = [
     ];
+
+    public $belongsTo = [
+        'school' => School::class,
+        'examination' => ExaminationType::class
+    ];
 }

@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: Name
+        type: text
+    roll_number:
+        label: 'Roll Number'
+        type: number
+    school_type_id:
+        label: School
+        type: text
+        searchable: true
+        sortable: true
+    examination_type_id:
+        label: 'Exam Type'
+        type: text
+        searchable: true
+        sortable: true
