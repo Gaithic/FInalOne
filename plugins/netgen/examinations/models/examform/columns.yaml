@@ -15,8 +15,12 @@ columns:
         type: text
         searchable: true
         sortable: true
+        relation: school
+        select: name
     examination_type_id:
         label: 'Exam Type'
         type: text
         searchable: true
         sortable: true
+        relation: examination
+        select: name

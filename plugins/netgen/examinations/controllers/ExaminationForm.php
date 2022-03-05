@@ -1,6 +1,7 @@
 <?php namespace Netgen\Examinations\Controllers;
 
 use Backend\Classes\Controller;
+use Backend\Facades\BackendAuth;
 use BackendMenu;
 
 class ExaminationForm extends Controller
@@ -15,5 +16,18 @@ class ExaminationForm extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Netgen.Examinations', 'main-menu-item', 'side-menu-item3');
+    }
+
+    /**
+     * 
+     * @return 
+     * 
+     */
+    public function listExtendQuery($query, $definition)
+    {
+        $user = BackendAuth::getUser();
+        if($user->id != "1"){
+            $query->where('school_id', $user->school_id);
+        }
     }
 }

@@ -1,6 +1,6 @@
 plugin:
     name: 'netgen.usergroup::lang.plugin.name'
-    description: 'netgen.usergroup::lang.plugin.description'
+    description: 'frontend users group assigned'
     author: Netgen
     icon: oc-icon-group
     homepage: ''

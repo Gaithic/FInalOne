@@ -33,6 +33,9 @@ p, a, span, ul, li, ol{
 	
 	font-size: var(--para-font-size);
 }
+.form-group label{
+    color: #000 !important;
+}
 a, a:hover{text-decoration: none !important;}
 button{
 	outline: none !important;
@@ -1087,4 +1090,6 @@ left: 34%;
 margin-bottom: 15px;
 	}
 }
+
+
 /*..............media  query ends*/
