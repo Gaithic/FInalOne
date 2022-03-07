@@ -3,6 +3,8 @@
 use Backend\Classes\Controller;
 use Backend\Facades\BackendAuth;
 use BackendMenu;
+use Netgen\Examinations\Models\ExamForm;
+use Renatio\DynamicPDF\Classes\PDF;
 
 class ExaminationForm extends Controller
 {
@@ -20,7 +22,7 @@ class ExaminationForm extends Controller
 
     /**
      * 
-     * @return 
+     * @return list of student belongs to specific principles
      * 
      */
     public function listExtendQuery($query, $definition)
@@ -30,4 +32,17 @@ class ExaminationForm extends Controller
             $query->where('school_id', $user->school_id);
         }
     }
+
+   
+
+  
+
+
+    
+
+ 
+
+
+
+
 }

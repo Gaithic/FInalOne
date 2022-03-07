@@ -17,4 +17,20 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerPDFTemplates()
+    {
+        return [
+            'netgen.examinations::pdf.admitCard',
+        ];
+    }
+
+    public function registerPDFLayouts()
+    {
+        return [
+            'netgen.examinations::pdf.layouts.default',
+        ];
+    }
+
+
 }

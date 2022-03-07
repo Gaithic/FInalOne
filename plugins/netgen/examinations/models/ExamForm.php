@@ -1,6 +1,9 @@
 <?php namespace Netgen\Examinations\Models;
 
+use Illuminate\Support\Facades\App;
 use Model;
+use Netgen\Examinations\Classes\ExaminationFormController;
+use Renatio\DynamicPDF\Classes\PDF;
 
 /**
  * Model
@@ -32,6 +35,17 @@ class ExamForm extends Model
         'examination' => ExaminationType::class
     ];
 
-   
+    /**
+     * 
+     *  On After Save
+     * 
+     */
+    public function afterSave(){
+        if(App::runningInBackend()) {
+            (new ExaminationFormController)->formAfterUpdate($this);
+        }
+    }
+  
+
     
 }

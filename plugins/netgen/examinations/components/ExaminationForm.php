@@ -21,7 +21,7 @@ class ExaminationForm extends ComponentBase
             'description'=> 'Enter examination data'
         ];
     }
-
+    
 
     public function onSave(){
         $data = post();
