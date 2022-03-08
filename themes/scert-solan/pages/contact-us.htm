@@ -28,3 +28,11 @@ iconclass = "icon-refresh"
 		</div>
 	</div>
 </section>
+
+{% put scripts %}
+<script>
+    $('#contactUs').on('ajaxSuccess', function() {
+        $('#contactUs').trigger('reset');
+    });
+</script>
+{% endput %}

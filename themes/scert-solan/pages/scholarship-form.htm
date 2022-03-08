@@ -11,3 +11,12 @@ redirect = "login"
 ==
 {% component 'session' %}
 {% component 'examinationform' %}
+
+
+{% put scripts %}
+<script>
+    $('#examForm').on('ajaxSuccess', function() {
+        $('#examForm').trigger('reset');
+    });
+</script>
+{% endput %}

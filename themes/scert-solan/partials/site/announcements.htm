@@ -4,7 +4,7 @@
 use Netgen\Scert\Models\Announcement;
 
 	function onStart(){
-	$this['announcements'] = Announcement::orderBy('date','desc')->get();
+	$this['announcements'] = Announcement::orderBy('date','desc')->take(5)->get();
 	}
 ?>
 ==

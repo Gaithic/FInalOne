@@ -54,3 +54,6 @@
 1.0.19:
     - 'Updated table netgen_examinations_form'
     - builder_table_update_netgen_examinations_form_11.php
+1.0.20:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form_12.php

@@ -10,6 +10,7 @@ use Netgen\Examinations\Models\ExaminationType;
 use Netgen\Examinations\Models\School;
 use Renatio\DynamicPDF\Classes\PDF;
 use Mail;
+use Winter\Storm\Support\Facades\Flash;
 
 class ExaminationFormController extends Controller{
     /**
@@ -31,14 +32,18 @@ class ExaminationFormController extends Controller{
                     'examType' => $examType->name,
                     'fatherName' => $model->father_name
                 ];
-            PDF::loadTemplate($templateCode,$data)->save('storage/app/form/'.$model->school_id.'_'.$model->roll_number.'.pdf');
 
-            Mail::send('netgen.examinations::mail.message', $vars, function($message) {
+            $path = 'storage/app/form/'.$model->school_id.'_'.$model->roll_number.'.pdf';
+            PDF::loadTemplate($templateCode,$data)->save($path);
 
-                $studentEmail = User::select('email',)->first();
-                $message->to($studentEmail->email, 'Admit Card');
-                $message->subject('New message from contact form SCERT');
-                Flash::success('Contact form has been submitted!');
+            $vars = [
+                'name' => $model->name,   
+            ];
+            Mail::send('netgen.examinations::mail.message', $vars, function($message) use($model,$path){
+                $message->to($model->email, 'Admit Card');
+                $message->subject('SCERT Solan Admit Card');
+                $message->attach($path);
+                Flash::success('Admit card send to student!');
             });
         }
         

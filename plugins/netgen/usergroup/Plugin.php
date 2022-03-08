@@ -14,7 +14,7 @@ class Plugin extends PluginBase
     }
 
     public function boot(){
-        Event::listen('rainlab.user.activate', function($user) {
+        Event::listen('rainlab.user.register', function($user) {
             $group = \Rainlab\User\Models\UserGroup::where('code', 'registered')->first();
             $user->groups()->add($group);
             $user->save();

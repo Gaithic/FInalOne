@@ -9,9 +9,8 @@ use Netgen\Examinations\Models\ExamForm;
 use Netgen\Examinations\Models\ExaminationType;
 use Netgen\Examinations\Models\School;
 use Netgen\Scert\Models\GlobalSetting;
-use Winter\Storm\Exception\ValidationException;
 use Winter\Storm\Support\Facades\Flash;
-
+use ValidationException;
 class ExaminationForm extends ComponentBase
 {
     public function componentDetails()
@@ -31,15 +30,16 @@ class ExaminationForm extends ComponentBase
                 'mother_name' =>'required',
                 'sex' => 'required',
                 'medium_of_examination' => 'required',
-                'mobile_number_of_parent' => 'required',
+                'mobile_number_of_parent' => 'required|regex:/^[0-9+ ]{10,10}+$/',
                 'roll_number' => 'required|unique:netgen_examinations_form,roll_number',
-                'school_type_id' => 'required',
-                'examination_type_id' => 'required'
+                'school_id' => 'required',
+                'examination_id' => 'required',
+                'email' =>'required|email'
             ];
-        $validator = Validator::make($data, $rules);
+        $validation = Validator::make($data, $rules);
 
-        if($validator->fails()){
-            throw new ValidationException($validator);
+        if($validation->fails()){
+            throw new ValidationException($validation);
         }else{
             $examForm = new ExamForm();
             $examForm->name = Input::get('name');
@@ -49,8 +49,9 @@ class ExaminationForm extends ComponentBase
             $examForm->mobile_number_of_parent = Input::get('mobile_number_of_parent');
             $examForm->roll_number = Input::get('roll_number');
             $examForm->sex = Input::get('sex');
-            $examForm->school_type_id = Input::get('school_type_id');
-            $examForm->examination_type_id = Input::get('examination_type_id');
+            $examForm->school_id = Input::get('school_id');
+            $examForm->examination_id = Input::get('examination_id');
+            $examForm->email = Input::get('email');
             $examForm->save();   
             Flash::success('Form has been submitted!'); 
         }
