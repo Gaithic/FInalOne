@@ -87,42 +87,13 @@ items:
         title: 'About Us'
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: about-us
-        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
-        items:
-            -
-                title: History
-                nesting: 1
-                type: static-page
-                url: null
-                code: ''
-                reference: about-us-history
-                cmsPage: null
-                replace: 0
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: Mission
-                nesting: 1
-                type: static-page
-                url: null
-                code: ''
-                reference: about-us-mission
-                cmsPage: null
-                replace: 0
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
     -
         title: Contact
         nesting: null
