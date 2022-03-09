@@ -3,6 +3,10 @@ fields:
         label: Name
         span: auto
         type: text
+    email:
+        label: Email
+        span: auto
+        type: text
     father_name:
         label: 'Father Name'
         span: auto
@@ -39,3 +43,7 @@ fields:
         descriptionFrom: name
         span: auto
         type: relation
+    is_approved:
+        label: 'Approve for the examination'
+        span: auto
+        type: switch

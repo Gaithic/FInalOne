@@ -1,0 +1,10 @@
+name: ContactList
+form: $/netgen/scert/models/contactlist/fields.yaml
+modelClass: Netgen\Scert\Models\ContactList
+defaultRedirect: netgen/scert/contactlist
+create:
+    redirect: 'netgen/scert/contactlist/update/:id'
+    redirectClose: netgen/scert/contactlist
+update:
+    redirect: netgen/scert/contactlist
+    redirectClose: netgen/scert/contactlist

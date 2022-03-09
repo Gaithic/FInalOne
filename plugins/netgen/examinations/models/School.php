@@ -23,5 +23,7 @@ class School extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'name' => 'required',
+        'udise_code' => 'required'
     ];
 }

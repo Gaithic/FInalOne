@@ -13,6 +13,77 @@ items:
             cssClass: ''
             isExternal: '0'
     -
+        title: Cells
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: cells
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Resource
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: resource
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Awards
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: awards
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Scholarship/ Examinations'
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: NTSE
+                type: url
+                url: /scholarship-examination/ntse
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: NMMS
+                type: url
+                url: /scholarship-examination/nmms
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
         title: 'About Us'
         nesting: 0
         type: static-page
@@ -53,45 +124,6 @@ items:
                     cssClass: ''
                     isExternal: '0'
     -
-        title: Cells
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: cells
-        cmsPage: null
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '1'
-    -
-        title: Resource
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: resource
-        cmsPage: null
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '1'
-    -
-        title: Awards
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: awards
-        cmsPage: null
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '1'
-    -
         title: Contact
         nesting: null
         type: cms-page
@@ -104,36 +136,4 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
-    -
-        title: 'Scholarship/ Examinations'
-        nesting: null
-        type: url
-        url: /
-        code: ''
-        reference: null
-        cmsPage: null
-        replace: null
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-        items:
-            -
-                title: NTSE
-                type: url
-                url: /scholarship-examination/1
-                code: ''
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: NMMS
-                type: url
-                url: /scholarship-examination/2
-                code: ''
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
 name: Main

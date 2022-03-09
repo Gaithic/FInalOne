@@ -3,6 +3,7 @@ namespace Netgen\Scert\Classes;
 
 use Backend\Classes\Controller;
 use Illuminate\Http\Request;
+use Netgen\Scert\Models\Category;
 use Netgen\Scert\Models\Ntse;
 use Netgen\Scert\Models\ScholarshipExamination;
 use Yajra\DataTables\Facades\DataTables;
@@ -14,9 +15,10 @@ class ScholarshipExaminationController extends Controller{
      *  Index
      * 
      */
-    public function index(Request $request,$category_id){
+    public function index(Request $request,$category){
         if($request->ajax()){
-            $query = ScholarshipExamination::query()->where('category_id',$category_id)->orderBy('date','desc');
+            $category = Category::where('name',$category)->first();
+            $query = ScholarshipExamination::query()->where('category_id',$category->id)->orderBy('date','desc');
             return DataTables::of($query)
                     ->addColumn('action', function($row){
                         if($row->is_open_file == 0){
@@ -27,7 +29,6 @@ class ScholarshipExaminationController extends Controller{
                         }
                         return $btn;
                     })
-                   
                     ->rawColumns(['action'])
                     ->make(true);
         }

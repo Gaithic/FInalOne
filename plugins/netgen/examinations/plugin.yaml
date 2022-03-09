@@ -1,6 +1,6 @@
 plugin:
     name: 'netgen.examinations::lang.plugin.name'
-    description: 'netgen.examinations::lang.plugin.description'
+    description: 'Scholarship Examination form'
     author: Netgen
     icon: oc-icon-newspaper-o
     homepage: ''
@@ -9,6 +9,8 @@ navigation:
         label: 'Scholarship Examination form'
         url: netgen/examinations/school
         icon: icon-mortar-board
+        permissions:
+            - manage_examination
         sideMenu:
             side-menu-item:
                 label: School
@@ -18,7 +20,19 @@ navigation:
                 label: 'Examination Type'
                 url: netgen/examinations/examinationtype
                 icon: icon-cubes
-            side-menu-item3:
-                label: 'Examination Form'
-                url: netgen/examinations/examinationform
-                icon: icon-file-text-o
+    main-menu-item2:
+        label: 'Examination Form'
+        url: netgen/examinations/examinationform
+        icon: icon-file
+        permissions:
+            - manage_examination_form
+permissions:
+    manage_examination_form:
+        tab: Examination
+        label: 'Manage Examination Form'
+    manage_examination:
+        tab: Examination
+        label: 'Manage Examination'
+    delete_examination:
+        tab: Examination
+        label: 'Delete Examination'

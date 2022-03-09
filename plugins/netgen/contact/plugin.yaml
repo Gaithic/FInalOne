@@ -1,6 +1,6 @@
 plugin:
     name: 'netgen.contact::lang.plugin.name'
-    description: 'netgen.contact::lang.plugin.description'
+    description: 'Contact form'
     author: Netgen
     icon: oc-icon-adjust
     homepage: ''

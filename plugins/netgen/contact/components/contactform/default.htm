@@ -1,67 +1,75 @@
-
-
 <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+        {% flash %}
+            <p
+                data-control="flash-message"
+                class="flash-message fade {{ type }}"
+                data-interval="5">
+                {{ message }}
+            </p>
+        {% endflash %}
+
         <form
         data-request="onSend"
+        class="fadeInRight" 
+        data-request-complete="updateCaptcha()" 
+        id="contactUs"
+        method="POST"
         data-request-validate
-        data-request-flash class="fadeInRight" data-request-complete="updateCaptcha()">
-        {% flash %}
-        <p
-            data-control="flash-message"
-            class="flash-message fade {{ type }}"
-            data-interval="5">
-            {{ message }}
-        </p>
-        {% endflash %}
-        <div class="form-group label-floating">
-            <label class="control-label" for="name">Name</label> &nbsp;
-            <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="">
-            <span data-validate-for="name">Enter your Name</span>
-            <div class="help-block with-errors">
-                <br>
+        data-request-flash 
+        >
+        {{ form_token() }}
+            <div class="form-group label-floating">
+                <label class="control-label" for="name">Name</label> 
+                <input type="text" class="form-control" name="name" id="name" value="{{ form_value('name') }}" required="">
+                <small data-validate-for="name" class="text-danger"></small>
+                <div class="help-block with-errors">
+                    <br>
+                </div>
             </div>
-        </div>
-        <div class="form-group label-floating">
-            <label class="control-label" for="email">Email</label> &nbsp;
-            <input class="form-control" id="email" type="email" name="email" required="" data-error="Please enter your Email" value="">
-            <span data-validate-for="email"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div></div>
-        <div class="form-group label-floating">
-            <label class="control-label">Subject</label> &nbsp;
-            <input class="form-control" id="msg_subject" type="text" name="subject" required="" data-error="Please enter your message subject" value="">
-            <span data-validate-for="subject"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div></div>
-        <div class="form-group label-floating">
-            <label class="control-label" for="message">Message</label>
-            <textarea class="form-control" rows="3" id="message" name="content" required="" data-error="Write your message" value=""></textarea>
-            <span data-validate-for="message"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div></div>
-        <div class="form-group">
-            <img src="{{ sitecaptcha.getImg() }}" alt="captcha" style="width: 30%" class="captcha-img" data-refresh-config="{{ sitecaptcha.property('type') }}">
-            {% if  sitecaptcha.property('showrefresh') == 'show'  %}
-            <a class="refresh-captcha" id="refreshcaptcha"><span class="{{ sitecaptcha.property('iconclass') }}"> <i class="fa fa-refresh"></i></span></a>
-            {% endif %}
-        </div>
-        
-        <div class="form-group">
-            <label for="pwd">Captcha:</label>
-            <input class="form-control" type="text" name="captcha"/>
-        </div>    
-        <div class="form-submit mt-4">
-            <button data-attach-loading class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Send Message</span></button>
-            <div class="h3 text-center hidden" id="msgSubmit">
-                <br>
+            <div class="form-group label-floating">
+                <label class="control-label" for="email">Email</label> 
+                <input class="form-control" id="email" type="email" name="email" required="" data-error="Please enter your Email" value="{{ form_value('email') }}">
+                <small data-validate-for="email" class="text-danger"></small>
+                <div class="help-block with-errors">
+                    <br>
+                </div></div>
+            <div class="form-group label-floating">
+                <label class="control-label">Subject</label> 
+                <input class="form-control" id="msg_subject" type="text" name="subject" required="" data-error="Please enter your message subject" value="{{ form_value('subject') }}">
+                <small data-validate-for="subject" class="text-danger"></small>
+                <div class="help-block with-errors">
+                    <br>
+                </div></div>
+            <div class="form-group label-floating">
+                <label class="control-label" for="message">Message</label>
+                <textarea class="form-control" rows="3" id="message" name="content" required="" data-error="Write your message" value="{{ form_value('content') }}"></textarea>
+                <small data-validate-for="content" class="text-danger"></small>
+                <div class="help-block with-errors">
+                    <br>
+                </div></div>
+            <div class="form-group">
+                <img src="{{ sitecaptcha.getImg() }}" alt="captcha" style="width: 30%" class="captcha-img" data-refresh-config="{{ sitecaptcha.property('type') }}">
+                {% if  sitecaptcha.property('showrefresh') == 'show'  %}
+                <a class="refresh-captcha" id="refreshcaptcha"><span class="{{ sitecaptcha.property('iconclass') }}"> <i class="fa fa-refresh"></i></span></a>
+                {% endif %}
             </div>
-            <div class="clearfix">
-                <br>
+            
+            <div class="form-group">
+                <label for="pwd">Captcha:</label>
+                <input class="form-control" type="text" name="captcha"/>
+            </div>    
+            <div class="form-submit mt-4">
+                <button data-attach-loading class="header-buttons" id="form-submit" type="submit" ><span><i class="material-icons mdi mdi-message-outline"></i> Send Message</span></button>
+                <div class="h3 text-center hidden" id="msgSubmit">
+                    <br>
+                </div>
+                <div class="clearfix">
+                    <br>
+                </div>
             </div>
-        </div>
-    </form>
-
+        </form>
 </div>
+
+
+
+

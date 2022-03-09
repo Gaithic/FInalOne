@@ -2,7 +2,7 @@
         <form
         data-request="onSave"
         data-request-validate
-        data-request-flash class="fadeInRight" >
+        data-request-flash class="fadeInRight" id="examForm">
         {% flash %}
             <p
                 data-control="flash-message"
@@ -14,16 +14,16 @@
         {% if __SELF__.schoolList %}
         <div class="form-group label-floating">
             <label for="correct_answer">School Name</label>
-            <select class="form-control" id="id" name="school_type_id">
+            <select class="form-control" id="id" name="school_id">
                 <option value="">Select School Name</option>
                 {% for school in __SELF__.schoolList %}
                     <option value="{{ school.id }}">{{ school.name }}</option>
                 {% endfor %}
             </select>
-            <span data-validate-for="school_type_id" data-validate-error>Select your School</span>
-            <div class="help-block with-errors">
+            <span data-validate-for="school_id" class="text-danger"> The school name field is required.</span>
+            {# <div class="help-block with-errors">
                 <br>
-            </div>
+            </div> #}
         </div>
         {% else %}
             <div class="alert alert-primary col-md-6" role="alert">
@@ -34,16 +34,13 @@
         {% if __SELF__.examinationList %}
         <div class="form-group label-floating">
             <label for="correct_answer">Scholarship Examination Type</label>
-            <select class="form-control" id="id" name="examination_type_id">
+            <select class="form-control" id="id" name="examination_id">
                 <option value="">Select Scholarship examination type</option>
                 {% for examination in __SELF__.examinationList %}
                     <option value="{{ examination.id }}">{{ examination.name }}</option>
                 {% endfor %}
             </select>
-            <span data-validate-for="name">Enter your Examination Type</span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="examination_id" class="text-danger">The examination name field is required.</span>
         </div>
         {% else %}
             <div class="alert alert-primary col-md-6" role="alert">
@@ -51,45 +48,36 @@
             </div>
         {% endif %}
         <div class="form-group label-floating">
-            <label class="control-label" for="name">Name</label> &nbsp;
+            <label  for="name">Name</label> 
             <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
-            <span data-validate-for="name">Enter your Name</span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="name" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label  for="email">Email</label> 
+            <input class="form-control" id="name" type="email" name="email" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
+            <span data-validate-for="email" class="text-danger"></span>
+            
         </div>
 
         <div class="form-group label-floating">
-            <label class="control-label" for="roll_number">School Roll Number</label> &nbsp;
+            <label  for="roll_number">Roll Number</label> 
             <input class="form-control" id="roll_number" type="text" name="roll_number" required="" data-error="Please enter your Roll Number" value="{{ form_value('roll_number') }}">
-            <span data-validate-for="roll_number"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="roll_number" class="text-danger"></span>
         </div>
         <div class="form-group label-floating">
-            <label class="control-label">Father's Name</label> &nbsp;
+            <label >Father's Name</label> 
             <input class="form-control" id="father_name" type="text" name="father_name" required="" data-error="Please enter your Father Name" value="{{ form_value('father_name') }}">
-            <span data-validate-for="father_name"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="father_name" class="text-danger"></span>
         </div>
         <div class="form-group label-floating">
-            <label class="control-label">Mother's Name</label> &nbsp;
+            <label >Mother's Name</label> 
             <input class="form-control" id="mother_name" type="text" name="mother_name" required="" data-error="Please enter your Father Name" value="{{ form_value('mother_name') }}">
-            <span data-validate-for="mother_name"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="mother_name" class="text-danger"></span>
         </div>
         <div class="form-group label-floating">
-            <label class="control-label" for="roll_number">Parent Mobile Number</label> &nbsp;
+            <label  for="roll_number">Parent Mobile Number</label> 
             <input class="form-control" id="mobile_number_of_parent" type="number" name="mobile_number_of_parent" required="" data-error="Please enter your parent number" value="{{ form_value('mobile_number_of_parent') }}">
-            <span data-validate-for="mobile_number_of_parent"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="mobile_number_of_parent" class="text-danger"></span>
         </div>
         <div class="form-group label-floating">
             <label for="correct_answer">Gender</label>
@@ -97,11 +85,9 @@
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
+                <option value="other">Other</option>
             </select>
-            <span data-validate-for="sex"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="sex" class="text-danger"></span>
         </div>
         <div class="form-group label-floating">
             <label for="correct_answer">Medium of Examination</label>
@@ -110,10 +96,7 @@
                 <option value="male">English</option>
                 <option value="female">Hindi</option>
             </select>
-            <span data-validate-for="medium_of_examination"></span>
-            <div class="help-block with-errors">
-                <br>
-            </div>
+            <span data-validate-for="medium_of_examination" class="text-danger"></span>
         </div>    
         <div class="form-submit mt-4">
             <button data-attach-loading class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Submit</span></button>
@@ -124,5 +107,6 @@
                 <br>
             </div>
         </div>
+ 
     </form>
 </div>

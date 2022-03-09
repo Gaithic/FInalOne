@@ -3,13 +3,13 @@
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Input;
 use Mail;
 use Netgen\Contact\Models\ContactForm as ModelsContactForm;
 use Netgen\Scert\Models\GlobalSetting;
 use Winter\Storm\Exception\ValidationException;
 use Winter\Storm\Support\Facades\Flash;
+use Winter\Storm\Support\Facades\Validator;
 
 class ContactForm extends ComponentBase
 {
@@ -32,7 +32,11 @@ class ContactForm extends ComponentBase
                 'captcha' => 'required|captcha_api:'. Session::get('captcha.key')
             ];
 
-        $validator = Validator::make($data, $rules);
+        $messages = [
+            'captcha.captcha' => 'Wrong Captcha, Try Again !'
+        ];
+
+        $validator = Validator::make($data, $rules, $messages);
         
         if($validator->fails()){
             throw new ValidationException($validator);

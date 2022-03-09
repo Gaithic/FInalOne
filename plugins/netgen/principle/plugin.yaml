@@ -1,0 +1,6 @@
+plugin:
+    name: 'netgen.principle::lang.plugin.name'
+    description: 'netgen.principle::lang.plugin.description'
+    author: Netgen
+    icon: oc-icon-user
+    homepage: ''

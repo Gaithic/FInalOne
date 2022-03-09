@@ -1,6 +1,7 @@
 <?php namespace Netgen\Scert\Models;
 
 use Model;
+use Winter\Storm\Database\Traits\Sortable;
 
 /**
  * Model
@@ -8,7 +9,7 @@ use Model;
 class Scholarship extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+    use Sortable;
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -25,5 +26,8 @@ class Scholarship extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'title' => 'required',
+        'image' =>'required',
+        'description' =>'required'        
     ];
 }

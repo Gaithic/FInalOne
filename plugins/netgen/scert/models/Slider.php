@@ -27,6 +27,11 @@ class Slider extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'slide_title' => 'required',
+        'slide_image' => 'required|mimes:jpeg,bmp,png',
+        'slide_image_mobile' => 'required|mimes:jpeg,bmp,png',
+        
+
     ];
 
   
