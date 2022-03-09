@@ -8,5 +8,5 @@ use Netgen\Scert\Models\Announcement;
 
 Route::get('/announcement-list', [AnnouncementController::class,'index'])->name('all.announcement');
 
-Route::get('/announcement-examination-list/{category_id}', [ScholarshipExaminationController::class,'index']);
+Route::get('/announcement-examination-list/{category}', [ScholarshipExaminationController::class,'index']);
 

@@ -37,7 +37,14 @@ is_hidden = 0
             serverSide: true,
             ajax: "{{ route('all.announcement') }}",
             columns: [
-                {data: 'title', name: 'title'},
+                {data: 'title', name: 'title',render:function(data, type, row){
+                    if(row.is_open_file == 0){
+                        return "<a href='/announcement-detail/"+row.slug+"' target='_blank'>" + row.title + " </a>"
+                    }else{
+                        return "<a href='/storage/app/media/"+row.file+"' target='_blank'>" + row.title + "</a> "
+                    }
+
+                }},
                 {data: 'date', name: 'date'},
                 {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
           ]

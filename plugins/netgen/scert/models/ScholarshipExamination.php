@@ -25,6 +25,10 @@ class ScholarshipExamination extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'title' => 'required',
+        'description' => 'required',
+        'date' => 'required',
+        'category' => 'required'
     ];
 
     public $belongsTo = [

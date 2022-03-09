@@ -22,12 +22,11 @@ iconclass = "icon-refresh"
 		<div class="row">
 		{{ configs.contact_us |raw }}
 		{% component 'contactform' %}
-
-
-
 		</div>
 	</div>
 </section>
+
+{% content 'contact-content' %}
 
 {% put scripts %}
 <script>

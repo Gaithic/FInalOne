@@ -67,26 +67,18 @@ items:
         items:
             -
                 title: NTSE
-                nesting: null
                 type: url
-                url: /scholarship-examination/1
+                url: /scholarship-examination/ntse
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: NMMS
-                nesting: null
                 type: url
-                url: /scholarship-examination/2
+                url: /scholarship-examination/nmms
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

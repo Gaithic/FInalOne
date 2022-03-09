@@ -28,7 +28,7 @@ class Announcement extends Model
         'title' => 'required',
         'description' => 'required_if:is_open_file,0',
         'date' => 'required',
-        'file' =>'required_if:is_open_file,1'
+        
 
     ];
 }

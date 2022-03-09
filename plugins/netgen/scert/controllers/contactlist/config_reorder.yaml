@@ -1,0 +1,4 @@
+title: ContactList
+modelClass: Netgen\Scert\Models\ContactList
+toolbar:
+    buttons: reorder_toolbar
