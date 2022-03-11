@@ -26,7 +26,6 @@ class ScholarshipExamination extends Model
      */
     public $rules = [
         'title' => 'required',
-        'description' => 'required',
         'date' => 'required',
         'category' => 'required'
     ];

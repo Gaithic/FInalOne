@@ -13,6 +13,19 @@ items:
             cssClass: ''
             isExternal: '0'
     -
+        title: 'About Us'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about-us
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
         title: Cells
         nesting: 0
         type: static-page
@@ -67,33 +80,56 @@ items:
         items:
             -
                 title: NTSE
+                nesting: null
                 type: url
                 url: /scholarship-examination/ntse
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: NMMS
+                nesting: null
                 type: url
                 url: /scholarship-examination/nmms
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
-    -
-        title: 'About Us'
-        nesting: 0
-        type: static-page
-        code: ''
-        reference: about-us
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '1'
+            -
+                title: SJMMSE
+                nesting: null
+                type: url
+                url: /scholarship-examination/sjmmse
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Scholarship Form'
+                nesting: null
+                type: url
+                url: /scholarship-form
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Contact
         nesting: null

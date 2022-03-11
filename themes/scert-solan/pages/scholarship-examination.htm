@@ -9,7 +9,8 @@ function onStart(){
 }
 
 function onEnd() {
-    $this->page->title = $this->param('category_id')==1 ? "NTSE" : "NMMS";
+    $category = $this->param('category');
+    $this->page->title = ($category == "ntse") ? "NTSE" : (($category == "nmms")  ? "NMMS" : "SJMMSE");
 }
 ?>
 ==

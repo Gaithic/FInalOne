@@ -24,3 +24,8 @@ columns:
         sortable: true
         relation: examination
         select: name
+    is_approved:
+        label: 'Approve Status'
+        type: switch
+        searchable: false
+        sortable: true

@@ -1034,6 +1034,19 @@ select.form-control[multiple] {
     height: auto
 }
 /*end of contact form*/
+/* form insteuctions */
+.instruction{
+    margin-top:20px;
+}
+.instruction li{
+    font-size:14px;
+    margin-bottom:0px
+    
+}
+.instruction .fa-star{
+    color:#052649;}
+/* end of form insteuctions */
+
 /* About Page */
 .scert-about{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
