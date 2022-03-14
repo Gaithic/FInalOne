@@ -8,7 +8,9 @@ use Input;
 use Netgen\Examinations\Models\ExamForm;
 use Netgen\Examinations\Models\ExaminationType;
 use Netgen\Examinations\Models\School;
+use Netgen\Examinations\Models\District;
 use Netgen\Scert\Models\GlobalSetting;
+use RainLab\User\Facades\Auth;
 use Winter\Storm\Support\Facades\Flash;
 use ValidationException;
 class ExaminationForm extends ComponentBase
@@ -24,6 +26,7 @@ class ExaminationForm extends ComponentBase
 
     public function onSave(){
         $data = post();
+        $user = Auth::getUser();
         $rules = [
                 'name' => 'required',
                 'father_name' => 'required',
@@ -34,7 +37,8 @@ class ExaminationForm extends ComponentBase
                 'roll_number' => 'required|unique:netgen_examinations_form,roll_number',
                 'school_id' => 'required',
                 'examination_id' => 'required',
-                'email' =>'required|email'
+                'email' =>'required|email',
+                'district_id' => 'required',
             ];
         $validation = Validator::make($data, $rules);
 
@@ -52,11 +56,29 @@ class ExaminationForm extends ComponentBase
             $examForm->school_id = Input::get('school_id');
             $examForm->examination_id = Input::get('examination_id');
             $examForm->email = Input::get('email');
+            $examForm->user_id = $user->id;
+            $examForm->district_id = Input::get('district_id');
             $examForm->save();   
+            
             Flash::success('Form has been submitted!'); 
+            
+            return Redirect::to('/dashboard');
+            
         }
        
     }
+    /**
+     * 
+     * List of District
+     * 
+     * 
+     */
+    
+    public function districtList(){
+        $districtList = District::get();
+        return $districtList;
+    }
+
      /**
      * List of School name 
      * 

@@ -26,4 +26,7 @@ class School extends Model
         'name' => 'required',
         'udise_code' => 'required'
     ];
+    public $belongsTo = [
+        'district' => District::class,
+    ];
 }

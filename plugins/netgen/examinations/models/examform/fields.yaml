@@ -1,7 +1,13 @@
 fields:
+    user:
+        label: 'Form filled by'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
     name:
         label: Name
-        span: auto
+        span: left
         type: text
     email:
         label: Email
@@ -31,6 +37,12 @@ fields:
         label: 'Roll Number'
         span: auto
         type: text
+    district:
+        label: District
+        nameFrom: district
+        descriptionFrom: description
+        span: auto
+        type: relation
     school:
         label: School
         nameFrom: name

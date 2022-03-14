@@ -11,6 +11,7 @@ navigation:
         icon: icon-mortar-board
         permissions:
             - manage_examination
+        order: ''
         sideMenu:
             side-menu-item:
                 label: School
@@ -20,12 +21,17 @@ navigation:
                 label: 'Examination Type'
                 url: netgen/examinations/examinationtype
                 icon: icon-cubes
+            side-menu-item3:
+                label: District
+                url: netgen/examinations/district
+                icon: icon-sitemap
     main-menu-item2:
         label: 'Examination Form'
         url: netgen/examinations/examinationform
         icon: icon-file
         permissions:
             - manage_examination_form
+        order: ''
 permissions:
     manage_examination_form:
         tab: Examination

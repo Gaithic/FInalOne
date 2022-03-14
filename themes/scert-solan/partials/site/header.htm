@@ -3,6 +3,11 @@
 [staticMenu]
 code = "main"
 ==
+<?php
+function onStart(){
+    $this['user'] = Auth::getUser();
+}
+==
 <div class="main-container">
     <div class="container-fluid">
         <div class="row">
@@ -15,7 +20,7 @@ code = "main"
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="signin">
                     {% if user %}
-                        <a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
+                        <a data-request="onLogout" style= "cursor:pointer;" data-request-data="redirect: '/'">Sign out</a>
                     {% else %}
                         <a href="/login"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp; 
                     {% endif %}
@@ -64,10 +69,19 @@ code = "main"
                        {% endif %}
                 </li>
                 {% endfor %}
-                
-               
-             
+                {% if user%}
+                 <li class="nav-item dropdown">
+                    <a class="nav-link" title="users" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">User</a>
+                        <ul class="dropdown-menu">
+                            <li target="_blank">
+                                <a class="nav-link" href="/dashboard">Dashboard</a>
+                                 <a class="nav-link" style= "cursor:pointer;" data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
+                            </li>
+                        </ul>
+                </li>
+               {% endif %}
             </ul>
+              
         </div>
         <img src="{{ configs.hp_logo.path }}" width="5%" alt="HPSCERT" class="hp-logo" />
     </nav>

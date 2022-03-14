@@ -1,0 +1,79 @@
+title = "Submitted Form"
+url = "/view-exam-form/:id"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Netgen\Examinations\Models\ExamForm"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+
+[session]
+security = "user"
+allowedUserGroups[] = "registered"
+redirect = "homepage"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+                <dl class="row">
+                <dt class="col-sm-3">ID</dt>
+                <dd class="col-sm-9"><p>{{  record.id  }}<p></dd>
+
+                <dt class="col-sm-3">Name</dt>
+                <dd class="col-sm-9"><p>{{  record.name  }}<p></dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">
+                    <p>{{ record.email }}</p>
+                </dd>
+
+                <dt class="col-sm-3">School Roll Number</dt>
+                <dd class="col-sm-9"><p>{{ record.roll_number}}</p></dd>
+
+                <dt class="col-sm-3 text-truncate">Father Name</dt>
+                <dd class="col-sm-9"><p>{{ record.father_name }}</p></dd>
+
+                <dt class="col-sm-3">Mother Name</dt>
+                <dd class="col-sm-9"><p>{{ record.mother_name }}</p>
+                </dd>
+
+                <dt class="col-sm-3">Parent Mobile Number</dt>
+                <dd class="col-sm-9"><p>{{ record.mobile_number_of_parent }}</p>
+                </dd>
+                <dt class="col-sm-3">Parent Mobile Number</dt>
+                <dd class="col-sm-9"><p>{{ record.mobile_number_of_parent }}</p>
+                </dd>
+                <dt class="col-sm-3">Gender</dt>
+                <dd class="col-sm-9"><p>{{ record.sex }}</p>
+                </dd>
+                <dt class="col-sm-3">District Name</dt>
+                <dd class="col-sm-9"><p>{{ record.district.district }}</p>
+                </dd>
+                <dt class="col-sm-3">School Name</dt>
+                <dd class="col-sm-9"><p>{{ record.school.name }}</p>
+                </dd>
+                <dt class="col-sm-3">Examination Type</dt>
+                <dd class="col-sm-9"><p>{{ record.examination.name }}</p>
+                </dd>
+                
+                <dt class="col-sm-3">Medium of Examination</dt>
+                <dd class="col-sm-9"><p>{{ record.medium_of_examination }}</p>
+                </dd>
+
+
+
+
+            </dl>
+        </div>
+    </div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

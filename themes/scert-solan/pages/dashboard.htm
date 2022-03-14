@@ -1,0 +1,87 @@
+title = "Dashboard"
+url = "/dashboard"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+allowedUserGroups[] = "registered"
+==
+<?php
+function onStart(){
+    $this['user'] = Auth::getUser();
+}
+==
+
+{% component 'session' %}
+
+{% flash %}
+    <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    </div>
+{% endflash %}
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="card-title">Scholarship Examination Forms</h4>
+            <ul class="instruction">
+                <li ><i class="fa fa-star"></i> National Talent Search Examination (NTSE) is a national level exam conducted by the National Council of Educational Research and Training (NCERT) for granting scholarships to meritorious students studying in class 10th.</li>
+                <li ><i class="fa fa-star"></i> National Means-cum-Merit Scholarship Scheme (NMMSS) scheme is to award scholarships to meritorious students of economically weaker sections to arrest their drop out at class VIII and encourage them to continue the study at secondary stage</li>
+                <li ><i class="fa fa-star"></i> Swaran Jayanti Middle Merit Scholarship (SJMMS). This scheme is started for the praiseworthy students of class 6th, 7th, 8th standard of government schools. Under this scheme, financial aid will be given to the students.</li>
+                <li><a class="btn btn-primary" href="/scholarship-form" role="button">Fill Examination Form</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Submitted Scholarship Examination Forms</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Examination Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% put styles %}
+    <link href="{{ 'assets/css/jquery.dataTables.min.css'|theme }}" rel="stylesheet">
+{% endput %}
+
+{% put scripts %}
+<script src="{{ [
+    'assets/js/jquery.min.js',
+    'assets/js/jquery.dataTables.min.js',
+] |theme }}">
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        var table = $('.table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "/examForm-list/{{user.id}}",
+            columns: [
+                {data: 'id', name: 'ID'},
+                {data: 'name', name: 'Name'},
+                {data:'examination_id', name:'Examination Type'},
+                {data: 'is_approved', name: 'Status'},
+                {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
+          ]
+        });
+    });
+
+
+</script>
+{% endput %}

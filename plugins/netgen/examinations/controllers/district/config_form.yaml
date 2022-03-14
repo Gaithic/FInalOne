@@ -1,0 +1,10 @@
+name: District
+form: $/netgen/examinations/models/district/fields.yaml
+modelClass: Netgen\Examinations\Models\District
+defaultRedirect: netgen/examinations/district
+create:
+    redirect: 'netgen/examinations/district/update/:id'
+    redirectClose: netgen/examinations/district
+update:
+    redirect: netgen/examinations/district
+    redirectClose: netgen/examinations/district

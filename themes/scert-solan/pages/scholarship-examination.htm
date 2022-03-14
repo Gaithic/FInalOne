@@ -14,6 +14,25 @@ function onEnd() {
 }
 ?>
 ==
+
+ <div class="card mb-4">
+    <div class="card-body">
+        {% if category == "ntse" %}
+            <h4 class="card-title">National Talent Search Examination (NTSE)</h4>
+            <p class="card-text"><i class="fa fa-star"></i> National Talent Search Examination (NTSE) is a national level exam conducted by the National Council of Educational Research and Training (NCERT) for granting scholarships to meritorious students studying in class 10th.</p>
+            
+        {% elseif category == "nmms" %}
+            <h4 class="card-title">National Means-cum-Merit Scholarship Scheme (NMMSS)</h4>
+            <p class="card-text"><i class="fa fa-star"></i> National Means-cum-Merit Scholarship Scheme (NMMSS) scheme is to award scholarships to meritorious students of economically weaker sections to arrest their drop out at class VIII and encourage them to continue the study at secondary stage</p>
+
+        {% else %}
+            <h4 class="card-title">Swaran Jayanti Middle Merit Scholarship (SJMMS)</h4>
+            <p class="card-text"><i class="fa fa-star"></i> Swaran Jayanti Middle Merit Scholarship (SJMMS). This scheme is started for the praiseworthy students of class 6th, 7th, 8th standard of government schools. Under this scheme, financial aid will be given to the students.</p>
+
+        {% endif  %}
+    </div>
+</div>
+
 <div class="container">
     <table class="table">
         <thead>

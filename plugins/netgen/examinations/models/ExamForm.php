@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\App;
 use Model;
 use Netgen\Examinations\Classes\ExaminationFormController;
+use RainLab\User\Models\User;
 use Renatio\DynamicPDF\Classes\PDF;
 
 /**
@@ -42,7 +43,9 @@ class ExamForm extends Model
 
     public $belongsTo = [
         'school' => School::class,
-        'examination' => ExaminationType::class
+        'examination' => ExaminationType::class,
+        'user' =>  User::class,
+        'district' => District::class,
     ];
 
     /**

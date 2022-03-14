@@ -11,14 +11,71 @@
                 {{ message }}
             </p>
         {% endflash %}
+        {{ form_token() }}
+        <div class="form-group label-floating">
+            <label  for="name">Name</label> 
+            <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
+            <span data-validate-for="name" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label  for="email">Email</label> 
+            <input class="form-control" id="name" type="email" name="email" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
+            <span data-validate-for="email" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label  for="roll_number">School Roll Number</label> 
+            <input class="form-control" id="roll_number" type="text" name="roll_number" required="" data-error="Please enter your Roll Number" value="{{ form_value('roll_number') }}">
+            <span data-validate-for="roll_number" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label >Father's Name</label> 
+            <input class="form-control" id="father_name" type="text" name="father_name" required="" data-error="Please enter your Father Name" value="{{ form_value('father_name') }}">
+            <span data-validate-for="father_name" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label >Mother's Name</label> 
+            <input class="form-control" id="mother_name" type="text" name="mother_name" required="" data-error="Please enter your Father Name" value="{{ form_value('mother_name') }}">
+            <span data-validate-for="mother_name" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label  for="roll_number">Parent Mobile Number</label> 
+            <input class="form-control" id="mobile_number_of_parent" type="number" name="mobile_number_of_parent" required="" data-error="Please enter your parent number" value="{{ form_value('mobile_number_of_parent') }}">
+            <span data-validate-for="mobile_number_of_parent" class="text-danger"></span>
+        </div>
+        <div class="form-group label-floating">
+            <label for="correct_answer">Gender</label>
+            <select class="form-control" id="sex" name="sex">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <span data-validate-for="sex" class="text-danger"></span>
+        </div>
+        {% if __SELF__.districtList %}
+        <div class="form-group label-floating">
+            <label for="correct_answer">District Name</label>
+            <select class="form-control" id="district" name="district_id">
+                <option value="">Select District Name</option>
+                {% for district in __SELF__.districtList %}
+                    <option value="{{ district.id }}">{{ district.district }}</option>
+                {% endfor %}
+            </select>
+            <span data-validate-for="district_id" class="text-danger"> The District name field is required.</span>
+        </div>
+        {% else %}
+            <div class="alert alert-primary col-md-6" role="alert">
+                <strong>There is no District to choose</strong>
+            </div>
+        {% endif %}
         {% if __SELF__.schoolList %}
         <div class="form-group label-floating">
             <label for="correct_answer">School Name</label>
-            <select class="form-control" id="id" name="school_id">
+            <select class="form-control" id="school" name="school_id">
                 <option value="">Select School Name</option>
-                {% for school in __SELF__.schoolList %}
+                {# {% for school in __SELF__.schoolList %}
                     <option value="{{ school.id }}">{{ school.name }}</option>
-                {% endfor %}
+                {% endfor %} #}
             </select>
             <span data-validate-for="school_id" class="text-danger"> The school name field is required.</span>
             {# <div class="help-block with-errors">
@@ -48,56 +105,14 @@
             </div>
         {% endif %}
         <div class="form-group label-floating">
-            <label  for="name">Name</label> 
-            <input class="form-control" id="name" type="text" name="name" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
-            <span data-validate-for="name" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
-            <label  for="email">Email</label> 
-            <input class="form-control" id="name" type="email" name="email" required="" data-error="Please enter your name" value="{{ form_value('name') }}">
-            <span data-validate-for="email" class="text-danger"></span>
-            
-        </div>
-
-        <div class="form-group label-floating">
-            <label  for="roll_number">Roll Number</label> 
-            <input class="form-control" id="roll_number" type="text" name="roll_number" required="" data-error="Please enter your Roll Number" value="{{ form_value('roll_number') }}">
-            <span data-validate-for="roll_number" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
-            <label >Father's Name</label> 
-            <input class="form-control" id="father_name" type="text" name="father_name" required="" data-error="Please enter your Father Name" value="{{ form_value('father_name') }}">
-            <span data-validate-for="father_name" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
-            <label >Mother's Name</label> 
-            <input class="form-control" id="mother_name" type="text" name="mother_name" required="" data-error="Please enter your Father Name" value="{{ form_value('mother_name') }}">
-            <span data-validate-for="mother_name" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
-            <label  for="roll_number">Parent Mobile Number</label> 
-            <input class="form-control" id="mobile_number_of_parent" type="number" name="mobile_number_of_parent" required="" data-error="Please enter your parent number" value="{{ form_value('mobile_number_of_parent') }}">
-            <span data-validate-for="mobile_number_of_parent" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
-            <label for="correct_answer">Gender</label>
-            <select class="form-control" id="sex" name="sex">
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-            <span data-validate-for="sex" class="text-danger"></span>
-        </div>
-        <div class="form-group label-floating">
             <label for="correct_answer">Medium of Examination</label>
             <select class="form-control" id="medium_of_examination" name="medium_of_examination">
                 <option value="">Select Medium of examination</option>
-                <option value="male">English</option>
-                <option value="female">Hindi</option>
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
             </select>
             <span data-validate-for="medium_of_examination" class="text-danger"></span>
-        </div>    
+        </div>  
         <div class="form-submit mt-4">
             <button data-attach-loading class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Submit</span></button>
             <div class="h3 text-center hidden" id="msgSubmit">
@@ -110,3 +125,31 @@
  
     </form>
 </div>
+
+{% put scripts %}
+<script src="{{ [
+    'assets/js/jquery.min.js',
+    'assets/js/jquery.dataTables.min.js',
+] |theme }}">
+
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+         jQuery('#district').change(function(){
+            let districtID = jQuery(this).val();
+            jQuery.ajax({
+                url:'getSchool',
+                type:'get',
+                data:'districtID='+districtID,
+                success:function(result){
+                    jQuery('#school').html(result)
+                }
+            });
+        });
+    });
+
+
+</script>
+{% endput %}

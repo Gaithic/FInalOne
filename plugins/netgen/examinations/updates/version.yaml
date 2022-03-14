@@ -57,3 +57,15 @@
 1.0.20:
     - 'Updated table netgen_examinations_form'
     - builder_table_update_netgen_examinations_form_12.php
+1.0.21:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form_13.php
+1.0.22:
+    - 'Created table netgen_examinations_district'
+    - builder_table_create_netgen_examinations_district.php
+1.0.23:
+    - 'Updated table netgen_examinations_schools'
+    - builder_table_update_netgen_examinations_schools_3.php
+1.0.24:
+    - 'Updated table netgen_examinations_form'
+    - builder_table_update_netgen_examinations_form_14.php

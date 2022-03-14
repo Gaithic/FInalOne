@@ -1,4 +1,4 @@
-title = "login"
+title = "Login / Register"
 url = "/login"
 layout = "default"
 meta_title = "Login/Register"
@@ -11,12 +11,13 @@ requirePassword = 0
 
 [session]
 security = "guest"
-redirect = "scholarship-form"
+redirect = "dashboard"
 
 [sitecaptcha]
 type = "math"
 showrefresh = "show"
 iconclass = "icon-refresh"
+
 ==
 {% if not user %}
 
@@ -24,8 +25,8 @@ iconclass = "icon-refresh"
         <div class="col-md-6">
             <h3>Login</h3>
             <ul class="instruction">
-                <li><i class="fa fa-star"></i> t is a long established fact that a reader will be distracted by</li>
-                <li><i class="fa fa-star"></i> t is a long established fact that a reader will be distracted by</li>
+                <li><i class="fa fa-star"></i> Already have an account? Login Here</li>
+                <li><i class="fa fa-star"></i> .......</li>
             </ul>
             <form data-request="onSignin" data-request-complete="updateCaptcha()">
                 <div class="form-group">
@@ -84,8 +85,8 @@ iconclass = "icon-refresh"
             {% if canRegister %}
                 <h3>Register</h3>
     <ul class="instruction">
-                <li><i class="fa fa-star"></i> t is a long established fact that a reader will be distracted by</li>
-                <li><i class="fa fa-star"></i> t is a long established fact that a reader will be distracted by</li>
+                <li><i class="fa fa-star"></i> Don't have an account? Register Here</li>
+                <li><i class="fa fa-star"></i> ....... </li>
             </ul>
                 {{ form_ajax('onRegister') }}
 

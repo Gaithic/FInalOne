@@ -1,4 +1,10 @@
 fields:
+    district:
+        label: District
+        span: auto
+        nameFrom: district
+        descriptionFrom: description
+        type: relation
     name:
         label: Name
         span: auto

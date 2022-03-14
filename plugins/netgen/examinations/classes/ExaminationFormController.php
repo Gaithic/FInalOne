@@ -64,4 +64,24 @@ class ExaminationFormController extends Controller{
       
         return $randomString;
     }
+
+    /**
+     * @return schoolname
+     * 
+     */
+    public function school(Request $request){
+        $districtID = $request->districtID;
+        $school = School::where('district_id',$districtID)->get();
+        if($school->count() > 0){
+            $html = '<option value="">Select School</option>';
+            foreach($school as $list){
+                $html .='<option value="'.$list->id.'">'.$list->name.'</option>';
+            }
+            echo $html;
+        }
+        else{
+            $html = '<option value="">There is no school</option>';
+            echo $html;
+        }
+    }
 }

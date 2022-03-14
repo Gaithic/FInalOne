@@ -1,0 +1,5 @@
+fields:
+    district:
+        label: District
+        span: auto
+        type: text

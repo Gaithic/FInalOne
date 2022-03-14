@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    district:
+        label: District
+        type: text
+        searchable: true
