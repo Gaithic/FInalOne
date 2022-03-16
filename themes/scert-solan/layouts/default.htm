@@ -33,7 +33,7 @@ function onStart(){
         <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/font-awesome.min.css'|theme }}" rel="stylesheet">
-
+        <link href="{{ 'assets/css/iziToast.css'|theme }}" rel="stylesheet">
 
         {% styles %}
     </head>
@@ -79,10 +79,31 @@ function onStart(){
             'assets/js/jquery.min.js',
             'assets/js/popper.min.js',
             'assets/js/bootstrap.bundle.min.js',
+            'assets/js/iziToast.js',
+            'assets/js/custom.js'
         ] |theme }}"></script>
 
+        <script>
+            {% flash %}
+                {% if type == 'success' %}
+                    iziToast.success({
+                        id: '{{ type }}',
+                        message: '{{ message }}',
+                        position: 'topCenter',
+                        transitionIn: 'bounceDown',
+                    });
+                {% else %}
+                    iziToast.error({
+                        id: '{{ type }}',
+                        message: '{{ message }}',
+                        position: 'topCenter',
+                        transitionIn: 'bounceDown',
+                    });
+                {% endif %}
+            {% endflash %}
+        </script>
         {% framework extras %}
-        {% snowboard all %}
+        {# {% snowboard all %} #}
         {% scripts %}
     </body>
 </html>

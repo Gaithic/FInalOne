@@ -5,19 +5,21 @@ meta_title = "Login/Register"
 is_hidden = 0
 
 [account]
+redirect = "dashboard"
 paramCode = "code"
 forceSecure = 0
 requirePassword = 0
-
-[session]
-security = "guest"
-redirect = "dashboard"
 
 [sitecaptcha]
 type = "math"
 showrefresh = "show"
 iconclass = "icon-refresh"
-
+==
+<?php
+function onStart(){
+    $this['captchaImage'] = $this['sitecaptcha']->getImg();
+}
+?>
 ==
 {% if not user %}
 
@@ -58,7 +60,7 @@ iconclass = "icon-refresh"
                 </div>
                 {% endif %}
                 <div class="form-group">
-                <img src="{{ sitecaptcha.getImg() }}" alt="captcha" style="width: 30%" class="captcha-img" data-refresh-config="{{ sitecaptcha.property('type') }}">
+                <img src="{{ captchaImage }}" alt="captcha" style="width: 30%" class="captcha-img" data-refresh-config="{{ sitecaptcha.property('type') }}">
                 {% if  sitecaptcha.property('showrefresh') == 'show'  %}
                 <a class="refresh-captcha" id="refreshcaptcha"><span class="{{ sitecaptcha.property('iconclass') }}"> <i class="fa fa-refresh"></i></span></a>
                 {% endif %}
@@ -80,6 +82,7 @@ iconclass = "icon-refresh"
 
             
         </div>
+       
          <div class="col-md-6">
             {# {% partial account ~ '::register' %} #}
             {% if canRegister %}
@@ -88,7 +91,7 @@ iconclass = "icon-refresh"
                 <li><i class="fa fa-star"></i> Don't have an account? Register Here</li>
                 <li><i class="fa fa-star"></i> ....... </li>
             </ul>
-                {{ form_ajax('onRegister') }}
+                <form data-request="onRegister" data-request-complete="updateCaptcha()">
 
                     <div class="form-group">
                         <label for="registerName">Full Name</label>
@@ -131,10 +134,23 @@ iconclass = "icon-refresh"
                             id="registerPassword"
                             placeholder="Choose a password" />
                     </div>
+                    
 
-                <button class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Register</span></button>
 
-                {{ form_close() }}
+                    <div class="form-group">
+                        <img src="{{ captchaImage }}" alt="captcha" style="width: 30%" class="captcha-img" data-refresh-config="{{ sitecaptcha.property('type') }}">
+                        {% if  sitecaptcha.property('showrefresh') == 'show'  %}
+                        <a class="refresh-captcha" id="refreshcaptcha"><span class="{{ sitecaptcha.property('iconclass') }}"> <i class="fa fa-refresh"></i></span></a>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                    <label for="pwd">Captcha:</label>
+                    <input class="form-control" type="text" name="captcha"/>
+                    </div>   
+
+                    <button class="header-buttons" id="form-submit" type="submit"><span><i class="material-icons mdi mdi-message-outline"></i> Register</span></button>
+                </form>
             {% else %}
                 <!-- Registration is disabled. -->
             {% endif %}
