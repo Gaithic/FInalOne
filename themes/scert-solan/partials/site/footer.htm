@@ -1,14 +1,14 @@
+[viewBag]
+
 [staticMenu]
 code = "footer"
-
-[viewBag]
 ==
 <div class="footer-menu">
 	{% if staticMenu.menuItems %}
 		<nav class="navbar navbar-expand-sm bg-light justify-content-center">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav footer-nav">
 				{% for item in staticMenu.menuItems %}
-					<li class="nav-item"><a class="nav-link" {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}">{{ item.title }} |</a></li>
+					<li class="nav-item "><a class="nav-link " {% if item.viewBag.isExternal %} target="_blank" {% endif %} href="{{ item.url }}" >{{ item.title }} </a></li>
 				{% endfor %}
 			</ul>
 		</nav>
@@ -47,3 +47,15 @@ code = "footer"
 		</div>
 	</div>
 </div>
+<script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "3px 10px";
+        document.getElementById("logo").style.fontSize = "25px";
+      } else {
+        document.getElementById("navbar").style.padding = "6px 10px";
+        document.getElementById("logo").style.fontSize = "35px";
+      }
+    }
+</script>

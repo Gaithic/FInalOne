@@ -7,6 +7,7 @@ code = "main"
 function onStart(){
     $this['user'] = Auth::getUser();
 }
+?>
 ==
 <div class="main-container">
     <div class="container-fluid">
@@ -38,11 +39,11 @@ function onStart(){
 </div>
 <div class="menu-header">
     {% if staticMenu.menuItems %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/"><img src="{{ configs.site_logo.path }}" class="hp-scert-logo" alt="HPSCERT Logo"/><h2 class="head-text">{{ configs.site_name }}</h2></a>
+        <a class="navbar-brand" href="/"><img src="{{ configs.site_logo.path }}" class="hp-scert-logo" alt="HPSCERT Logo" id="logo"/><h2 class="head-text">{{ configs.site_name }}</h2></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <!-- <ul class="navbar-nav mx-auto"> 
                 {% for item in staticMenu.menuItems %}
@@ -83,7 +84,7 @@ function onStart(){
             </ul>
               
         </div>
-        <img src="{{ configs.hp_logo.path }}" width="5%" alt="HPSCERT" class="hp-logo" />
+        <img src="{{ configs.hp_logo.path }}" width="5%" alt="HPSCERT" class="hp-logo" id="logo"/>
     </nav>
     {% endif %}
 </div>
