@@ -17,7 +17,7 @@ class ExaminationForm extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Netgen.Examinations', 'main-menu-item', 'side-menu-item3');
+        BackendMenu::setContext('Netgen.Examinations','main-menu-item2');
     }
 
     /**

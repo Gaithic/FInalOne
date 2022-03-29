@@ -7,7 +7,8 @@ use Model;
  */
 class ScholarshipExamination extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Sluggable;
     
     /*
      * Disable timestamps by default.
@@ -17,9 +18,15 @@ class ScholarshipExamination extends Model
 
 
     /**
+     * @var array Generate slugs for these attributes.
+     */
+    protected $slugs = ['slug' => 'title'];
+
+    /**
      * @var string The database table used by the model.
      */
     public $table = 'netgen_scert_scholarship_examinations';
+
 
     /**
      * @var array Validation rules

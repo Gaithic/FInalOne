@@ -9,7 +9,18 @@ fields:
         preset:
             field: title
             type: slug
+        trigger:
+            action: show
+            field: edit_slug
+            condition: checked
         type: text
+    edit_slug:
+        label: 'Edit Slug'
+        span: auto
+        context:
+            - update
+            - preview
+        type: switch
     image:
         label: Image
         mode: image

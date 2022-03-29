@@ -3,9 +3,20 @@ fields:
         label: Title
         span: full
         type: text
+    edit_slug:
+        label: 'Edit Slug'
+        span: auto
+        context:
+            - update
+            - preview
+        type: switch
     slug:
         label: Slug
         span: full
+        trigger:
+            action: show
+            field: edit_slug
+            condition: checked
         preset:
             field: title
             type: slug

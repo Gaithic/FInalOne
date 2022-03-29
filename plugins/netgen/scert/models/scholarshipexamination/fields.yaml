@@ -6,10 +6,21 @@ fields:
     slug:
         label: Slug
         span: auto
+        trigger:
+            action: show
+            field: edit_slug
+            condition: checked
         preset:
             field: title
             type: slug
         type: text
+    edit_slug:
+        label: 'Edit Slug'
+        span: auto
+        context:
+            - update
+            - preview
+        type: switch
     category:
         label: Category
         nameFrom: name

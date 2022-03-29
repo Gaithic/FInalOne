@@ -112,16 +112,11 @@ img {
 	font-weight: bold;
 }
 #navbar {
-  overflow: hidden;
-  background-color: #f1f1f1;
   padding: 6px 10px;
   transition: 0.4s;
-  width: 100%;
-  top: 0;
-  / z-index: 1; /
 }
 
-#navbar a {
+/* #navbar a {
   float: left;
   color: black;
   text-align: center;
@@ -130,7 +125,7 @@ img {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-}
+} */
 		#navbar #logo {
   font-size: 35px;
   font-weight: bold;

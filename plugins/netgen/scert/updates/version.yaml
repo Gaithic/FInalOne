@@ -144,3 +144,12 @@
 1.0.51:
     - 'Drop table netgen_scert_contact_list'
     - builder_table_delete_netgen_scert_contact_list.php
+1.0.52:
+    - 'Updated table netgen_scert_announcements'
+    - builder_table_update_netgen_scert_announcements_7.php
+1.0.53:
+    - 'Updated table netgen_scert_scholarship'
+    - builder_table_update_netgen_scert_scholarship_2.php
+1.0.54:
+    - 'Updated table netgen_scert_scholarship_examinations'
+    - builder_table_update_netgen_scert_scholarship_examinations_7.php
