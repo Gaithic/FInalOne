@@ -43,10 +43,19 @@ button{
 img {
 	width: 100%;
 }
+table thead{
+        background: #052649;
+    color: #ffca00;}
+    
+/* @media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1396px !important;
+
+} */
 /*.................main-css starts*/
 .header-buttons
 {
-	/* border: 1px solid rgb(0, 0, 0); */
+	border: none !important;
 	/* border-radius: 10px; */
 	margin:0px 5px;
 	padding:12px 35px;
@@ -473,12 +482,17 @@ bottom: -26px;
 		border-radius: 3px;
 		border: 1px solid #ccc;
 }
+.scert-sidebar ul{
+    margin-bottom:0px;
+    }
 .scert-sidebar ul li
 	{
 		height: 50px;
-		width: 100%;
-		border-bottom: 1px solid #ccc;
-		padding-left: 10px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    display: grid;
+    align-items: center;
 	}
 .scert-sidebar ul li a
 	{
@@ -1146,6 +1160,12 @@ left: 34%;
 	}
 }
 @media only screen and (max-width: 576px) {
+    .footer-nav li {
+        border-right: none !important;
+    }
+    .m-hidden{
+        display: none;
+    }
 	.signin {
 		margin-top: -27px;
 	}
