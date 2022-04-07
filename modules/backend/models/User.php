@@ -4,6 +4,7 @@ use Mail;
 use Event;
 use Backend;
 use BackendAuth;
+use Netgen\Examinations\Models\School;
 use Winter\Storm\Auth\Models\User as UserBase;
 
 /**
@@ -270,5 +271,15 @@ class User extends UserBase
         $this->mergedPermissions = null;
 
         return true;
+    }
+
+
+    /**
+     * @return schoolOptions
+     * 
+     */
+    public function getSchoolOptions(){
+        return School::where('district_id',$this->district_id)->pluck('name','id');
+
     }
 }
