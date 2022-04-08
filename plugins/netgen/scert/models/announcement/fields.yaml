@@ -21,20 +21,6 @@ fields:
             field: title
             type: slug
         type: text
-    is_open_file:
-        label: 'Upload File On click'
-        span: auto
-        default: 0
-        type: switch
-    description:
-        label: Description
-        size: huge
-        span: full
-        trigger:
-            action: hide
-            field: is_open_file
-            condition: checked
-        type: richeditor
     date:
         label: 'Date picker'
         mode: date
@@ -44,8 +30,9 @@ fields:
         label: File
         mode: file
         span: auto
-        trigger:
-            action: show
-            field: is_open_file
-            condition: checked
         type: mediafinder
+    description:
+        label: Description
+        size: huge
+        span: full
+        type: richeditor

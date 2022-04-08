@@ -1,4 +1,4 @@
-title = "Announcement detail"
+title = "Announcement Details"
 url = "/announcement-detail/:slug"
 layout = "default"
 is_hidden = 0
@@ -15,21 +15,26 @@ notFoundMessage = "Record not found"
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
 {% if record %}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 my-3">
-                    <h2 class="scholarship-text">Announcements /Notice-Board</h2>
-                </div>
-            </div>
-            <div class="row">
-                    <div class="col-lg-12 my-3">
-                        <div class="text-one">
-                            <div class="body1">
-                                <h5>{{ record.title }}</h5>
-                                <p>{{ record.description|raw}}</p>
-                            </div>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card" >
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                {% if record.file %}
+                                    <a href="{{ record.file|media }}" target="_blank"><h5> {{ record.title }} <i class="fa fa-download" aria-hidden="true"></i></h5></a>  
+                                {% else %}
+                                     {{ record.title }}
+                                {% endif %}
+                            </h5>
+                        </div>
+                        <div class="ml-3">
+                            {% if record.description %}
+                                {{ record.description|raw }}
+                            {% endif %}
+                            
                         </div>
                     </div>
+                </div>
             </div>
         </div>
 {% else %}

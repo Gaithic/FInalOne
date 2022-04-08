@@ -4,12 +4,11 @@ layout = "default"
 is_hidden = 0
 ==
 <div class="container">
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
             <tr>
-                <th width="70%">Title</th>
+                <th width="90%">Title</th>
                 <th>Date</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -37,16 +36,8 @@ is_hidden = 0
             serverSide: true,
             ajax: "{{ route('all.announcement') }}",
             columns: [
-                {data: 'title', name: 'title',render:function(data, type, row){
-                    if(row.is_open_file == 0){
-                        return "<a href='/announcement-detail/"+row.slug+"' target='_blank'>" + row.title + " </a>"
-                    }else{
-                        return "<a href='/storage/app/media/"+row.file+"' target='_blank'>" + row.title + "</a> "
-                    }
-
-                }},
+                {data: 'title', name: 'title'},
                 {data: 'date', name: 'date'},
-                {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
           ]
         });
     });

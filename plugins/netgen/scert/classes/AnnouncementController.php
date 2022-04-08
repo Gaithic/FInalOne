@@ -17,17 +17,10 @@ class AnnouncementController extends Controller{
         if($request->ajax()){
             $query = Announcement::query();
             return DataTables::of($query)
-                    ->addColumn('action', function($row){
-                        if($row->is_open_file == 0){
-                            $btn = '<a href="/announcement-detail/'.$row->slug.'" target="_blank" class="btn btn-outline-primary btn-sm " title="View"><i class="fa fa-eye"></i></a>';
-                        }
-                        else{
-                            $btn = '<a href="/storage/app/media'.$row->file.'" target="_blank" class="btn btn-outline-primary btn-sm " title="View"><i class="fa fa-eye"></i></a>';
-                        }
-                        return $btn;
+                    ->editColumn('title', function ($row) {
+                           return '<a href="/announcement-detail/'.$row->slug.'" target="_blank">'.$row->title.'</a> ';
                     })
-                  
-                    ->rawColumns(['action'])
+                    ->rawColumns(['title'])
                     ->make(true);
         }
     }

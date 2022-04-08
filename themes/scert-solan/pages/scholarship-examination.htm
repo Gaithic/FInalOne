@@ -5,9 +5,10 @@ is_hidden = 0
 ==
 <?php
 function onStart(){
+    use Netgen\Scert\Models\Category;
     $this['category'] = $this->param('category');
+    $this['examinationTypes'] = Category::where('name',$this['category'])->first();
 }
-
 function onEnd() {
     $category = $this->param('category');
     $this->page->title = ($category == "ntse") ? "NTSE" : (($category == "nmms")  ? "NMMS" : "SJMMSE");
@@ -18,28 +19,24 @@ function onEnd() {
  <div class="card mb-4">
     <div class="card-body">
         {% if category == "ntse" %}
-            <h4 class="card-title">National Talent Search Examination (NTSE)</h4>
-            <p class="card-text"><i class="fa fa-star"></i> National Talent Search Examination (NTSE) is a national level exam conducted by the National Council of Educational Research and Training (NCERT) for granting scholarships to meritorious students studying in class 10th.</p>
+            {{examinationTypes.description|raw}}
             
         {% elseif category == "nmms" %}
-            <h4 class="card-title">National Means-cum-Merit Scholarship Scheme (NMMSS)</h4>
-            <p class="card-text"><i class="fa fa-star"></i> National Means-cum-Merit Scholarship Scheme (NMMSS) scheme is to award scholarships to meritorious students of economically weaker sections to arrest their drop out at class VIII and encourage them to continue the study at secondary stage</p>
+            {{examinationTypes.description|raw}}
 
         {% else %}
-            <h4 class="card-title">Swaran Jayanti Middle Merit Scholarship (SJMMS)</h4>
-            <p class="card-text"><i class="fa fa-star"></i> Swaran Jayanti Middle Merit Scholarship (SJMMS). This scheme is started for the praiseworthy students of class 6th, 7th, 8th standard of government schools. Under this scheme, financial aid will be given to the students.</p>
+            {{examinationTypes.description|raw}}
 
         {% endif  %}
     </div>
 </div>
 
 <div class="container">
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
             <tr>
-                <th width="70%">Title</th>
+                <th width="90%">Title</th>
                 <th>Date</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -69,16 +66,8 @@ function onEnd() {
             serverSide: true,
             ajax: "/announcement-examination-list/{{ category }}",
             columns: [
-                {data: 'title', name: 'title', render:function(data, type, row){
-                    if(row.is_open_file == 0){
-                        return "<a href='/announcement-detail/"+row.slug+"' target='_blank'>" + row.title + " </a>"
-                    }else{
-                        return "<a href='/storage/app/media/"+row.file+"' target='_blank'>" + row.title + "</a> "
-                    }
-
-                }},
+                {data: 'title', name: 'title'},
                 {data: 'date', name: 'date'},
-                {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
           ]
         });
     });

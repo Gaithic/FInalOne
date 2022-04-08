@@ -280,6 +280,7 @@ class User extends UserBase
      */
     public function getSchoolOptions(){
         return School::where('district_id',$this->district_id)->pluck('name','id');
-
     }
+
+    
 }
