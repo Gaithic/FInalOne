@@ -18,34 +18,41 @@ class Plugin extends PluginBase
     public function boot()
     {
         User::extend(function($model){
-            $model->belongsTo['school'] = ['netgen\examinations\Models\School'];  
-            $model->belongsTo['district'] = ['netgen\examinations\Models\District'];            
-            $model->bindEvent('model.getSchoolOptions', function ($attribute, $value) {
-                return School::where('district_id',$attribute->id)->pluck('name','id');
-            });
+            // $model->belongsTo['school'] = ['netgen\examinations\Models\School'];  
+            $model->belongsTo['district'] = ['netgen\examinations\Models\District'];    
         });
 
          Users::extendFormFields(function($form, $model, $context){
                 if (!$model instanceof User)
                 return;
-
                 $form->addTabFields([
                     'district' => [
                         'label'   => 'District Name',
                         'comment' => 'Select District',
-                        'list' => '$/netgen/examinations/models/District/columns.yaml',
                         'relation'=> 'district',
                         'select' => 'district',
-                        'type' => 'relation',      
+                        'type' => 'relation', 
+                        'placeholder' => 'Select District Name',
+                        'trigger' => [
+                            'action' => 'show',
+                            'field' => 'role',
+                            'condition' => 'value[3]',
+                        ],
                     ],
                     'school' => [
                         'label'   => 'School Name',
                         'comment' => 'Associate this user with a School',
                         'type' => 'dropdown',
                         'dependsOn' => 'district',
-
+                        'trigger' => [
+                            'action' => 'show',
+                            'field' => 'role',
+                            'condition' => 'value[3]',
+                        ],
                     ]
                 ]);
+           
+                
           
         });
     }

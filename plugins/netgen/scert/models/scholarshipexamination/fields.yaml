@@ -25,21 +25,8 @@ fields:
         label: Category
         nameFrom: name
         descriptionFrom: name
-        span: auto
-        type: relation
-    is_open_file:
-        label: 'Open file upload'
         span: left
-        type: switch
-    description:
-        label: Description
-        size: large
-        span: full
-        trigger:
-            action: hide
-            field: is_open_file
-            condition: checked
-        type: richeditor
+        type: relation
     date:
         label: Date
         mode: date
@@ -48,9 +35,10 @@ fields:
     file:
         label: File
         mode: file
-        span: auto
-        trigger:
-            action: show
-            field: is_open_file
-            condition: checked
+        span: left
         type: mediafinder
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor

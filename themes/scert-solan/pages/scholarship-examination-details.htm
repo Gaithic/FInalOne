@@ -1,0 +1,49 @@
+title = "Scholarship Examination Details"
+url = "/scholarship-examination-details/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Netgen\Scert\Models\ScholarshipExamination"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "description"
+notFoundMessage = "Record not found"
+==
+<?php
+function onStart(){
+    use Netgen\Scert\Models\ScholarshipExamination;
+    $slug = $this->param('slug');
+    $examinationType = ScholarshipExamination::where('slug',$slug)->first();
+    $this->page->title = "Scholarship Examination Details of ".$examinationType->category->name;
+}
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card" >
+                <div class="card-header">
+                    <h5 class="card-title">
+                        {% if record.file %}
+                            <a href="{{ record.file|media }}" target="_blank"><h5> {{ record.title }} <i class="fa fa-download" aria-hidden="true"></i></h5></a>  
+                        {% else %}
+                             {{ record.title }}
+                        {% endif %}
+                    </h5>
+                </div>
+                <div class="ml-3">
+                    {% if record.description %}
+                        {{ record.description|raw }}
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

@@ -19,16 +19,9 @@ use Netgen\Scert\Models\Announcement;
 			<div class="col-lg-12">
 				{% for announcement in announcements %}
 					<p>
-						{% if announcement.is_open_file ==0 %}
-							<a class="link-info" target="_blank" href="/announcement-detail/{{ announcement.slug }}">
-								<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
-								{# <img src="/storage/app/media/new-blinking.gif" height="5%" width="5%" class="img-thumbnail" alt=""> #}
-							</a>
-						{% else %}
-							<a class="link-info" target="_blank" href="{{ announcement.file|media }}">
-								<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
-							</a>
-						{% endif %}
+						<a class="link-info" target="_blank" href="/announcement-detail/{{ announcement.slug }}">
+							<i class="fa fa-angle-double-right" aria-hidden="true"></i>{{ announcement.title }}
+						</a>
 					</p>
 				{% endfor %}
 				<div class=" text-center">

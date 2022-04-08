@@ -29,7 +29,7 @@ navigation:
                 url: netgen/scert/announcement
                 icon: icon-calendar
             side-menu-item6:
-                label: Category
+                label: 'Examination Types'
                 url: netgen/scert/category
                 icon: icon-align-justify
             side-menu-item5:

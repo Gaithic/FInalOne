@@ -153,3 +153,6 @@
 1.0.54:
     - 'Updated table netgen_scert_scholarship_examinations'
     - builder_table_update_netgen_scert_scholarship_examinations_7.php
+1.0.55:
+    - 'Updated table netgen_scert_categories'
+    - builder_table_update_netgen_scert_categories_3.php
