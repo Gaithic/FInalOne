@@ -9,8 +9,11 @@ allowedUserGroups[] = "registered"
 redirect = "login"
 ==
 <?php
+use Netgen\Examinations\Models\ExaminationType;
+
 function onStart(){
     $this['user'] = Auth::getUser();
+    $this['examination'] = ExaminationType::where('is_examination',1)->first();
 }
 ?>
 ==
@@ -24,14 +27,17 @@ function onStart(){
                 <li ><i class="fa fa-star"></i> National Talent Search Examination (NTSE) is a national level exam conducted by the National Council of Educational Research and Training (NCERT) for granting scholarships to meritorious students studying in class 10th.</li>
                 <li ><i class="fa fa-star"></i> National Means-cum-Merit Scholarship Scheme (NMMSS) scheme is to award scholarships to meritorious students of economically weaker sections to arrest their drop out at class VIII and encourage them to continue the study at secondary stage</li>
                 <li ><i class="fa fa-star"></i> Swaran Jayanti Middle Merit Scholarship (SJMMS). This scheme is started for the praiseworthy students of class 6th, 7th, 8th standard of government schools. Under this scheme, financial aid will be given to the students.</li>
-                <li><a class="btn btn-primary" href="/scholarship-form" role="button">Fill Examination Form</a></li>
+                {% if examination %}
+                    <li><a class="btn btn-primary" href="/scholarship-form" role="button">Fill Examination Form</a></li>            
+                {% endif %}
+                
             </ul>
         </div>
     </div>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <h4 class="card-title">Submitted Scholarship Examination Forms</h4>
-            <table class="table">
+            <table class="table ">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -70,8 +76,8 @@ function onStart(){
             columns: [
                 {data: 'id', name: 'ID'},
                 {data: 'name', name: 'Name'},
-                {data:'examination_id', name:'Examination Type'},
-                {data: 'is_approved', name: 'Status'},
+                {data:'examination_id', name:'examination_id'},
+                {data: 'is_approved', name: 'is_approved'},
                 {data: 'action', name: 'action', orderable: false, searchable: false, width: "15%"},
           ]
         });

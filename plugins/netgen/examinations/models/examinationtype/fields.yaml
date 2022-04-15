@@ -3,3 +3,8 @@ fields:
         label: Type
         span: auto
         type: text
+    is_examination:
+        label: 'Enable examination form'
+        span: left
+        required: 1
+        type: switch

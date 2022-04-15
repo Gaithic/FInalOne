@@ -69,3 +69,6 @@
 1.0.24:
     - 'Updated table netgen_examinations_form'
     - builder_table_update_netgen_examinations_form_14.php
+1.0.25:
+    - 'Updated table netgen_examinations_type'
+    - builder_table_update_netgen_examinations_type_3.php
