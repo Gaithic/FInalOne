@@ -23,6 +23,9 @@ class ScholarshipExaminationController extends Controller{
                     ->editColumn('title', function ($row) {
                         return '<a href="/scholarship-examination-details/'.$row->slug.'" target="_blank">'.$row->title.'</a> ';
                     })
+                    ->editColumn('date', function($row){
+                        return date("d-m-Y",strtotime($row->date));
+                    })
                     ->rawColumns(['title'])
 
                     ->make(true);

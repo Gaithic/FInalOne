@@ -88,10 +88,10 @@ class ExaminationForm extends ComponentBase
         return $schoolname;
     }
     /**
-     * List of examination
+     * List of examination which are enabled
      */
     public function examinationList(){
-        $examinationList = ExaminationType::get();
+        $examinationList = ExaminationType::where('is_examination',1)->get();
         return $examinationList;
     }
 

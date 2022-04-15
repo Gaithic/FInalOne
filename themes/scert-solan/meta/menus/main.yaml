@@ -118,14 +118,10 @@ items:
                     cssClass: ''
                     isExternal: '0'
             -
-                title: 'Scholarship Form'
-                nesting: null
+                title: 'Examination Form'
                 type: url
-                url: /scholarship-form
+                url: /dashboard
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

@@ -10,7 +10,7 @@ class AnnouncementController extends Controller{
 
     /**
      * 
-     *  Index
+     *  List of announcement
      * 
      */
     public function index(Request $request){
@@ -18,7 +18,10 @@ class AnnouncementController extends Controller{
             $query = Announcement::query();
             return DataTables::of($query)
                     ->editColumn('title', function ($row) {
-                           return '<a href="/announcement-detail/'.$row->slug.'" target="_blank">'.$row->title.'</a> ';
+                        return '<a href="/announcement-detail/'.$row->slug.'" target="_blank">'.$row->title.'</a> ';
+                    })
+                    ->editColumn('date',function($row){
+                        return date("d-m-Y",strtotime($row->date));
                     })
                     ->rawColumns(['title'])
                     ->make(true);
