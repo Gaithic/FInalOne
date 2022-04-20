@@ -156,3 +156,9 @@
 1.0.55:
     - 'Updated table netgen_scert_categories'
     - builder_table_update_netgen_scert_categories_3.php
+1.0.56:
+    - 'Updated table netgen_scert_categories'
+    - builder_table_update_netgen_scert_examination_types.php
+1.0.57:
+    - 'Updated table netgen_scert_examination_types'
+    - builder_table_update_netgen_scert_categories_4.php

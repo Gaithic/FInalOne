@@ -2,9 +2,9 @@
 ==
 <?php
 use Netgen\Scert\Models\Announcement;
-
+use Netgen\Scert\Models\ScholarshipExamination;
 	function onStart(){
-	$this['announcements'] = Announcement::orderBy('date','desc')->take(5)->get();
+	$this['announcements'] = ScholarshipExamination::orderBy('date','desc')->take(5)->get();
 	}
 ?>
 ==
