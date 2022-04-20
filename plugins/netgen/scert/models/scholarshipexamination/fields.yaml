@@ -22,10 +22,11 @@ fields:
             - preview
         type: switch
     category:
-        label: Category
+        label: 'Announcement Category'
         nameFrom: name
         descriptionFrom: name
         span: left
+        containerAttributes: {  }
         type: relation
     date:
         label: Date
