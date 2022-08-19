@@ -1,0 +1,17 @@
+title = "User Dashboard"
+url = "/user-dashboard"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Netgen\Examinations\Models\ExaminationType;
+
+function onStart(){
+    $user = Auth::getUser();
+    if (!$user) {
+        return Redirect::to('/login-user');
+    }
+    $this['examination'] = ExaminationType::where('is_examination',1)->first();
+}
+?>
+==

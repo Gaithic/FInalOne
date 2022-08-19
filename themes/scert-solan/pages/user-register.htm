@@ -1,0 +1,24 @@
+title = "User Register"
+url = "/user-register"
+layout = "default"
+is_hidden = 0
+
+[UserRegistration]
+
+[session]
+security = "all"
+==
+    <?php
+    use Netgen\Examinations\Models\ExaminationType;
+    
+    function onStart(){
+        $this['userCanRegister']= ExaminationType::where('is_examination',1)->first();
+    }
+    
+==
+
+{% if userCanRegister %}
+    {% component 'UserRegistration' %}{% component 'session' %}
+{% else %}
+    Registration is Disabled.....
+{% endif %}

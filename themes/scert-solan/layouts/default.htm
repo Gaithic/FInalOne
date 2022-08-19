@@ -34,6 +34,7 @@ function onStart(){
         <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/font-awesome.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/iziToast.css'|theme }}" rel="stylesheet">
+        <script src="{{'assets/js/ajax/ajax.js'|theme }}"></script>
 
         {% styles %}
     </head>
@@ -103,7 +104,7 @@ function onStart(){
             {% endflash %}
         </script>
         {% framework extras %}
-        {# {% snowboard all %} #}
+        {% snowboard all %}
         {% scripts %}
     </body>
 </html>

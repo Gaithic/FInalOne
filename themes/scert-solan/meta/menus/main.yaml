@@ -79,10 +79,10 @@ items:
             isExternal: '0'
         items:
             -
-                title: NTSE
+                title: 'User Registration'
                 nesting: null
                 type: url
-                url: /scholarship-examination/ntse
+                url: /user-register
                 code: ''
                 reference: null
                 cmsPage: null
@@ -92,36 +92,10 @@ items:
                     cssClass: ''
                     isExternal: '0'
             -
-                title: NMMS
-                nesting: null
-                type: url
-                url: /scholarship-examination/nmms
+                title: 'User Login'
+                type: cms-page
                 code: ''
-                reference: null
-                cmsPage: null
-                replace: null
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: SJMMSE
-                nesting: null
-                type: url
-                url: /scholarship-examination/sjmmse
-                code: ''
-                reference: null
-                cmsPage: null
-                replace: null
-                viewBag:
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: 'Examination Form'
-                type: url
-                url: /dashboard
-                code: ''
+                reference: user-login
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
