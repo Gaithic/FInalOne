@@ -93,9 +93,9 @@ items:
                     isExternal: '0'
             -
                 title: 'User Login'
-                type: cms-page
+                type: url
+                url: /user-dashboard
                 code: ''
-                reference: user-login
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

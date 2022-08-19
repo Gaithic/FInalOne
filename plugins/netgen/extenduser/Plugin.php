@@ -8,13 +8,13 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return ([
-            'Netgen\ExtendUser\Components\Register' => 'UserRegistration',
+            'Netgen\ExtendUser\Components\UserRegistration' => 'Registration',
             'Netgen\ExtendUser\Components\Login' => 'UserLogin'
         ]);
     }
 
     public function registerSettings()
-    {   
+    {
     }
 
     public function boot(){

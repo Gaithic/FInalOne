@@ -201,7 +201,7 @@ class Account extends ComponentBase
                 : 'required|email|between:6,255';
 
             $rules['password'] = 'required|between:4,255';
-            $rules['captcha'] = 'required|captcha_api:'. Session::get('captcha.key');
+            // $rules['captcha'] = 'required|captcha_api:'. Session::get('captcha.key');
             if (!array_key_exists('login', $data)) {
                 $data['login'] = post('username', post('email'));
             }

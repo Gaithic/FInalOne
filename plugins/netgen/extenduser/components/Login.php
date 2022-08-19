@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Hash;
 use Session;
 Use Redirect;
 use Input;
-use RainLab\User\Facades\Auth;
+use Auth;
 use RainLab\User\Models\User;
+use DB;
 
 class Login extends ComponentBase
 {
@@ -36,13 +37,13 @@ class Login extends ComponentBase
     //     //     'email' => 'required',
     //     //     'password' => 'required',
     //     // ]);
-   
+
     //     $credentials = $request->only($mobile, $otp);
     //     if (Auth::attempt($credentials)) {
     //         return redirect()->intended('dashboard')
     //                     ->withSuccess('Signed in');
     //     }
-  
+
     //     return redirect("login")->withSuccess('Login details are not valid');
     // }
 
@@ -52,17 +53,46 @@ class Login extends ComponentBase
     //   return redirect('user-login');
     // }
 
-    public function customLogin(Request $request){        
-        try {
-                $mobile = $request->mobile;
-                $user = Auth::attempt([
-                    'login' => $mobile,
-                    'password' => Hash::make('Netgen@123'),
-                ]);
-                return sprintf('welcome %s!!!', $mobile);
-            }
-            catch (\Winter\Storm\Auth\AuthException $e) {
-                return sprintf('Invalid credentials!');
-            }
+    public function customLogin(Request $request){
+        $loggedIn = Auth::check();
+        $user = Auth::getUser();
+        $user = Auth::authenticate([
+            'login' => post('login'),
+            'password' => post('password')
+        ], true);
+        Auth::login($user, true);
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::attempt($credentials)) {
+        //     return redirect()->intended('home');
+        // }
+
+        // return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+    }
+
+    public function generateLoginOTP(Request $request){
+        $mobile = $request->mobile;
+        $data = 45678;
+        $password = 'Netgen@123';
+        $add = DB::table('users')
+              ->where('mobile', $mobile)
+              ->update(['password' => $password]);
+
+        $credentials = $request->only('mobile', 'password');
+        $user = \RainLab\User\Models\User::whereMobile($mobile)->first();
+        $res = Auth::loginUsingId($user);
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('home');
+        }
+
+        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+        // return response()->json([
+        //     'add' => $add,
+        // ]);
     }
 }

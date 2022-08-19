@@ -3,22 +3,35 @@ url = "/user-register"
 layout = "default"
 is_hidden = 0
 
-[UserRegistration]
+[Registration]
 
-[session]
-security = "all"
+[account]
+redirect = "user-dashboard"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
 ==
-    <?php
-    use Netgen\Examinations\Models\ExaminationType;
+<?php
+use Netgen\Examinations\Models\ExaminationType;
     
     function onStart(){
         $this['userCanRegister']= ExaminationType::where('is_examination',1)->first();
     }
-    
+?>
 ==
-
 {% if userCanRegister %}
-    {% component 'UserRegistration' %}{% component 'session' %}
+{% component 'Registration' %}
 {% else %}
     Registration is Disabled.....
+{% endif %}{% if not user %}
+
+
+{% else %}
+
+    {% partial account ~ '::activation_check' %}
+
+    {% partial account ~ '::update' %}
+
+    {% partial account ~ '::deactivate_link' %}
+
 {% endif %}

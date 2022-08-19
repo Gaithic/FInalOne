@@ -14,7 +14,7 @@
             name="otp"
             type="text"
             class="form-control"
-            id="userSigninLogin"
+            id="otp"
             placeholder="Enter your OTP" />
     </div>
 
@@ -38,14 +38,16 @@
     })
     $(document).ready(function(){
        $('#login').on('click', function(){
-        var mobile = $('#mobile').val();
+            var email = $('#mobile').val();
+            var password= $('#otp').val();
             $.ajax({
-                url: "/user-login",
+                url: "/user-otp-login",
                 data:{
-                    mobile:mobile
+                    email:email,
+                    password:password
                 },
                 success:function(data){
-                   
+
                 }
             })
        })
