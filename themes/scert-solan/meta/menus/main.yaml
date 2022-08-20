@@ -92,7 +92,7 @@ items:
                     cssClass: ''
                     isExternal: '0'
             -
-                title: 'User Login'
+                title: Login
                 type: url
                 url: /user-dashboard
                 code: ''

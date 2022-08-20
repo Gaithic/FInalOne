@@ -9,7 +9,9 @@ class Plugin extends PluginBase
     {
         return ([
             'Netgen\ExtendUser\Components\UserRegistration' => 'Registration',
-            'Netgen\ExtendUser\Components\Login' => 'UserLogin'
+            'Netgen\ExtendUser\Components\Login' => 'UserLogin',
+            'Netgen\ExtendUser\Components\AccoutnExtend' => 'account',
+            'Netgen\Extenduser\Components\Session' => 'Session',
         ]);
     }
 

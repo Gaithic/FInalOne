@@ -56,12 +56,12 @@ class Account extends ComponentBase
                 'type'        => 'checkbox',
                 'default'     => 0
             ],
-            'requirePassword' => [
-                'title'       => /*Confirm password on update*/'rainlab.user::lang.account.update_requires_password',
-                'description' => /*Require the current password of the user when changing their profile.*/'rainlab.user::lang.account.update_requires_password_comment',
-                'type'        => 'checkbox',
-                'default'     => 0
-            ],
+            // 'requirePassword' => [
+            //     'title'       => /*Confirm password on update*/'rainlab.user::lang.account.update_requires_password',
+            //     'description' => /*Require the current password of the user when changing their profile.*/'rainlab.user::lang.account.update_requires_password_comment',
+            //     'type'        => 'checkbox',
+            //     'default'     => 0
+            // ],
         ];
     }
 
@@ -200,7 +200,7 @@ class Account extends ComponentBase
                 ? 'required|between:2,255'
                 : 'required|email|between:6,255';
 
-            $rules['password'] = 'required|between:4,255';
+            //$rules['password'] = 'required|between:4,255';
             // $rules['captcha'] = 'required|captcha_api:'. Session::get('captcha.key');
             if (!array_key_exists('login', $data)) {
                 $data['login'] = post('username', post('email'));

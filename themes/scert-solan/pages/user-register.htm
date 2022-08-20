@@ -3,10 +3,7 @@ url = "/user-register"
 layout = "default"
 is_hidden = 0
 
-[Registration]
-
-[account]
-redirect = "user-dashboard"
+[Netgen\ExtendUser\Components\AccoutnExtend account]
 paramCode = "code"
 forceSecure = 0
 requirePassword = 0
@@ -20,18 +17,7 @@ use Netgen\Examinations\Models\ExaminationType;
 ?>
 ==
 {% if userCanRegister %}
-{% component 'Registration' %}
+{% component 'account' %}
 {% else %}
     Registration is Disabled.....
-{% endif %}{% if not user %}
-
-
-{% else %}
-
-    {% partial account ~ '::activation_check' %}
-
-    {% partial account ~ '::update' %}
-
-    {% partial account ~ '::deactivate_link' %}
-
 {% endif %}

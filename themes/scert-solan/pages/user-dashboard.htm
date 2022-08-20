@@ -3,10 +3,9 @@ url = "/user-dashboard"
 layout = "default"
 is_hidden = 0
 
-[session]
-security = "user"
-allowedUserGroups[] = "registered"
-redirect = "login-user"
+[RainLab\User\Components\Account account]
+paramCode = "code"
+forceSecure = 0
 ==
 <?php
 use Netgen\Examinations\Models\ExaminationType;
@@ -17,9 +16,20 @@ function onStart(){
 }
 ?>
 ==
-{% component 'session' %}
+{% if not user %}
 
-<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Sign in</h3>
+            {% partial account ~ '::signin' %}
+        </div>
+
+    </div>
+
+{% else %}
+
+   <div class="container">
     <div class="card mb-4">
         <div class="card-body">
             <h4 class="card-title">Scholarship Examination Forms</h4>
@@ -53,6 +63,10 @@ function onStart(){
         </div>
     </div>
 </div>
+{% endif %}
+
+
+
 
 {% put styles %}
     <link href="{{ 'assets/css/jquery.dataTables.min.css'|theme }}" rel="stylesheet">

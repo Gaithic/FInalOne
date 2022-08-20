@@ -23,7 +23,7 @@ function onStart(){
                     {% if user %}
                         <a data-request="onLogout" style= "cursor:pointer;" data-request-data="redirect: '/'">Sign out</a>
                     {% else %}
-                        <a href="/login"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp;
+                        <a href="/login-user"><i class="fa fa-user" aria-hidden="true"></i>	&nbsp;<span>Login/Register</span></a> | &nbsp;&nbsp;
                     {% endif %}
                     {% if configs.facebook_url %}
                         <a href="{{ configs.facebook_url}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
