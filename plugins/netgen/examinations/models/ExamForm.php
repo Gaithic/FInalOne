@@ -60,5 +60,7 @@ class ExamForm extends Model
     }
   
 
-    
+    public $attachOne = [
+        'userimage' => 'System\Models\File'
+    ];
 }

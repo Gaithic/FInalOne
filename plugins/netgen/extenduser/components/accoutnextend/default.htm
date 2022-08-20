@@ -1,59 +1,53 @@
-{% if canRegister %}
-    <h3>Register</h3>
+<form
+    data-request="onRegister"
+    data-request-validate
+    data-request-flash>
 
-    {{ form_ajax('onRegister') }}
 
-        <div class="form-group">
-            <label for="registerName">Full Name</label>
-            <input
-                name="name"
-                type="text"
-                class="form-control"
-                id="registerName"
-                placeholder="Enter your full name" />
-        </div>
+    <div class="form-group">
+        <label for="registerName">Full Name</label>
+        <input
+            name="name"
+            type="text"
+            class="form-control"
+            id="registerName"
+            placeholder="Enter your full name" />
+        </div>       
+            <p class="text-danger"><span data-validate-for="name"></span></p>
 
-        <div class="form-group">
-            <label for="registerEmail">Email</label>
-            <input
-                name="email"
-                type="email"
-                class="form-control"
-                id="registerEmail"
-                placeholder="Enter your email" />
-        </div>
+    <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="registerEmail"
+            placeholder="Enter your email" />
+    </div>
+        <p class="text-danger"><span data-validate-for="email"></span></p>
 
-        {% if loginAttribute == "username" %}
-            <div class="form-group">
-                <label for="registerUsername">Username</label>
-                <input
-                    name="username"
-                    type="text"
-                    class="form-control"
-                    id="registerUsername"
-                    placeholder="Enter your username" />
-            </div>
-        {% endif %}
+    <div class="form-group">
+        <label for="registerPassword">Father Name</label>
+        <input
+            name="fathername"
+            type="text"
+            class="form-control"
+            id="fathername"
+            placeholder="Enter Your Father Name" required/>
+    </div>
+        <p class="text-danger"><span data-validate-for="fathername"></span></p>
 
-        <div class="form-group">
-            <label for="registerPassword">Father Name</label>
-            <input
-                name="fathername"
-                type="text"
-                class="form-control"
-                id="fathername"
-                placeholder="Enter Your Father Name" required/>
-        </div>
+    <div class="form-group">
+        <label for="registerPassword">Mother Name</label>
+        <input
+            name="mothername"
+            type="text"
+            class="form-control"
+            id="mothername"
+            placeholder="Enter Your Mother Name" required/>
+    </div>
 
-        <div class="form-group">
-            <label for="registerPassword">Mother Name</label>
-            <input
-                name="mothername"
-                type="text"
-                class="form-control"
-                id="mothername"
-                placeholder="Enter Your Mother Name" required/>
-        </div>
+        <p class="text-danger"><span data-validate-for="mothername"></span></p>
 
 
         <div class="form-group">
@@ -69,34 +63,36 @@
             <option value="Female">Female</option>
             <option value="others">Other</option>
         </select>
-        </div>
+    </div>
+   <p class="text-danger"><span data-validate-for="gender"></span></p>
 
 
-        <div class="form-group">
-            <label for="registerPassword">Mobile</label>
-            <input
-                name="contact"
-                type="text"
-                class="form-control"
-                id="mobile"
-                placeholder="Enter Your Contact Number.." required/>
-        </div>
-
-        <div class="form-group">
-            <label for="registerEmail">otp</label>
-            <input
-                name="password"
-                type="text"
-                class="form-control"
-                id="email"
-                placeholder="Enter your OTP Here" required/>
-        </div>
+    <div class="form-group">
+        <label for="registerPassword">Mobile</label>
+        <input
+            name="contact"
+            type="text"
+            class="form-control"
+            id="mobile"
+            placeholder="Enter Your Contact Number.." required/>
+    </div>
+        <p class="text-danger"><span data-validate-for="contact"></span></p>
 
 
+    <div class="form-group">
+        <label for="registerEmail">OTP</label>
+        <input
+            name="password"
+            type="text"
+            class="form-control"
+            id="password"
+            placeholder="Enter your OTP Here" required/>
+    </div>
+        {# <p class="text-danger"><span data-validate-for="otp"></span></p> #}
+   
 
-        <button type="submit" class="btn btn-default">Register</button>
 
-    {{ form_close() }}
-{% else %}
-    <!-- Registration is disabled. -->
-{% endif %}
+
+    <button type="submit" class="btn btn-success my-4" data-attach-loading>Register</button>
+
+</form>

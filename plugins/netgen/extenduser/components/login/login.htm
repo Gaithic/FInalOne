@@ -1,33 +1,43 @@
+{% flash %}
+<div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+</div>
+{% endflash %}
+<form
+    data-request="onSignin"
+    data-request-validate
+    data-request-flash>
+
+    
     <div class="form-group">
         <label for="userSigninLogin">Email /Phone </label>
         <input
-            name="mobile"
+            name="email"
             type="text"
             class="form-control"
-            id="mobile"
+            id="email"
             placeholder="Enter your Mobile Number And Email" />
     </div>
-
-    <div class="form-group">
-        <label for="userOTP">OTP</label>
-        <input
-            name="otp"
-            type="text"
-            class="form-control"
-            id="otp"
-            placeholder="Enter your OTP" />
-    </div>
-
-    {% if rememberLoginMode == 'ask' %}
-    <div class="form-group">
-        <div class="checkbox">
-        <label><input name="remember" type="checkbox" value="1">Stay logged in</label>
+    <button type="button" class="btn btn-success" id="sendOtp">Send OTP</button>
+    
+    
+    <div id="otpSection">
+        <div class="form-group" id="hideOtp">
+            <label for="userOTP">OTP</label>
+            <input
+                name="password"
+                type="text"
+                class="form-control"
+                id="password"
+                placeholder="Enter your OTP" />
         </div>
-    </div>
-    {% endif %}
 
-    <button type="submit" class="btn btn-default" id="login">Sign in</button>
-    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/user-register"
+        <button type="submit" class="btn btn-success" id="login">Verify OTP</button>
+    </div>
+</form>
+
+    <p class="small fw-bold mt-2 pt-1 mb-2 my-4">Don't have an account? <a href="/user-register"
                 class="link-danger">Register</a></p>
 
 <script>
@@ -37,9 +47,10 @@
         }
     })
     $(document).ready(function(){
-       $('#login').on('click', function(){
-            var email = $('#mobile').val();
-            var password= $('#otp').val();
+       $('#otpSection').hide();
+        $('#sendOtp').on('click', function(){
+            var email = $('#email').val();
+            var password= $('#password').val();
             $.ajax({
                 url: "/user-otp-login",
                 data:{
@@ -47,9 +58,12 @@
                     password:password
                 },
                 success:function(data){
-
+                    $('#otpSection').show();
+                    $('#sendOtp').hide();
                 }
             })
-       })
+        });
+
+
     })
 </script>

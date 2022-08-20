@@ -12,6 +12,7 @@ class Plugin extends PluginBase
             'Netgen\ExtendUser\Components\Login' => 'UserLogin',
             'Netgen\ExtendUser\Components\AccoutnExtend' => 'account',
             'Netgen\Extenduser\Components\Session' => 'Session',
+            'Netgen\Extenduser\Components\AccoutnExtendLogin' => 'LoginExtend',
         ]);
     }
 

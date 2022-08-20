@@ -1,4 +1,4 @@
-title = "Submitted Form"
+title = "Temporary Admit Card"
 url = "/view-exam-form/:id"
 layout = "default"
 is_hidden = 0
@@ -67,6 +67,16 @@ redirect = "homepage"
                 <dt class="col-sm-3">Medium of Examination</dt>
                 <dd class="col-sm-9"><p>{{ record.medium_of_examination }}</p>
                 </dd>
+
+                <dt class="col-sm-3">Image</dt>
+                <dd class="col-sm-9"><p>{{ record.userimage }}</p>
+                </dd>
+
+                <div class="header-1">
+                    <figure class="image-figure">
+                        <img src="{{ record.image|media }}" alt="{{ record.title }}" class="rounded mx-auto d-block"/>
+                    </figure>
+                </div>
 
 
 

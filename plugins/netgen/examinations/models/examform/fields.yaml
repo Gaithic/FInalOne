@@ -59,3 +59,10 @@ fields:
         label: 'Approve for the examination'
         span: auto
         type: switch
+    userimage:
+        label: 'Upload Image'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        span: auto
+        type: mediafinder

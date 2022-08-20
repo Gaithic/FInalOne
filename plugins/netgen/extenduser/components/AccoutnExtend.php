@@ -2,6 +2,10 @@
 
 use Cms\Classes\ComponentBase;
 use RainLab\User\Components\Account as UserAccount;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
+use Winter\Storm\Support\Facades\Flash;
+
 class AccoutnExtend extends UserAccount
 {
     public function componentDetails()
@@ -23,4 +27,6 @@ class AccoutnExtend extends UserAccount
         $user = $this->user();
        return $redirect;
     }
+
+
 }

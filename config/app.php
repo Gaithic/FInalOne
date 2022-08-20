@@ -235,6 +235,7 @@ return [
 
         'System\ServiceProvider',
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Craftsys\Msg91\Msg91LaravelServiceProvider::class,
 
     ]),
 
@@ -273,6 +274,7 @@ return [
 
         // 'Str' => 'Illuminate\Support\Str', // Example
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Msg91' => Craftsys\Msg91\Facade\Msg91::class,
 
 
     ]),

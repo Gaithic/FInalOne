@@ -4,10 +4,9 @@ layout = "default"
 meta_title = "Login User"
 is_hidden = 0
 
-[account]
-redirect = "user-dashboard"
+[LoginExtend]
+redirect = "dashboard"
 paramCode = "code"
 forceSecure = 0
-requirePassword = 0
 ==
-{% component 'account' %}
+{% component 'LoginExtend' %}

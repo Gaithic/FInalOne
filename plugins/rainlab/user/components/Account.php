@@ -318,6 +318,9 @@ class Account extends ComponentBase
 
             Event::fire('rainlab.user.register', [$user, $data]);
 
+            Flash::success(Lang::get(/*Your Account is created Succesfully Kindly Login For Scholarship Form Submission.. */'User Registered Successfully..'));
+            
+            return Redirect::to(url('/user-dashboard'));
             /*
              * Activation is by the user, send the email
              */

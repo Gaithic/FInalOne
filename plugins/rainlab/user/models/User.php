@@ -23,11 +23,19 @@ class User extends UserBase
      * Validation rules
      */
     public $rules = [
-        'email'    => 'required|between:6,255|email|unique:users',
-        'avatar'   => 'nullable|image|max:4000',
-        'username' => 'required|between:2,255|unique:users',
-        'password' => 'required:create|between:8,255',
-        'password_confirmation' => 'required_with:password|between:8,255',
+        'email'    => 'required|between:6,255|email',
+        'name' => 'required',
+        'fathername' => 'required',
+        'mothername' => 'required',
+        'fathername' => 'required',
+        'gender' => 'required',
+        'contact' => 'required',
+        //'otp' => 'required',
+
+        // 'avatar'   => 'nullable|image|max:4000',
+        // 'username' => 'required|between:2,255|unique:users',
+        // 'password' => 'required:create|between:8,255',
+        // 'password_confirmation' => 'required_with:password|between:8,255',
     ];
 
     /**
@@ -51,9 +59,12 @@ class User extends UserBase
         'username',
         'email',
         'password',
-        'password_confirmation',
         'created_ip_address',
-        'last_ip_address'
+        'last_ip_address',
+        'fathername',
+        'mothername',
+        'gender',
+        'contact',
     ];
 
     /**
@@ -209,7 +220,7 @@ class User extends UserBase
      */
     public static function getMinPasswordLength()
     {
-        return Config::get('rainlab.user::minPasswordLength', 8);
+        return Config::get('rainlab.user::minPasswordLength', 6);
     }
 
     //
@@ -258,9 +269,9 @@ class User extends UserBase
         /*
          * Apply Password Length Settings
          */
-        $minPasswordLength = static::getMinPasswordLength();
-        $this->rules['password'] = "required:create|between:$minPasswordLength,255|confirmed";
-        $this->rules['password_confirmation'] = "required_with:password|between:$minPasswordLength,255";
+        // $minPasswordLength = static::getMinPasswordLength();
+        // $this->rules['password'] = "required:create|between:$minPasswordLength,255|confirmed";
+        // $this->rules['password_confirmation'] = "required_with:password|between:$minPasswordLength,255";
     }
 
     /**

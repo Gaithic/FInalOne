@@ -10,6 +10,8 @@ use Input;
 use Auth;
 use RainLab\User\Models\User;
 use DB;
+use Illuminate\Support\Facades\Lang;
+use Winter\Storm\Support\Facades\Flash;
 
 class Login extends ComponentBase
 {
@@ -75,24 +77,47 @@ class Login extends ComponentBase
         // return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
+    // public function generateLoginOTP(Request $request){
+    //     $mobile = $request->mobile;
+    //     $data = 45678;
+    //     $password = 'Netgen@123';
+    //     $add = DB::table('users')
+    //           ->where('mobile', $mobile)
+    //           ->update(['password' => $password]);
+
+    //     $credentials = $request->only('mobile', 'password');
+    //     $user = \RainLab\User\Models\User::whereMobile($mobile)->first();
+    //     $res = Auth::loginUsingId($user);
+    //     if (Auth::attempt($credentials)) {
+    //         return redirect()->intended('home');
+    //     }
+
+    //     return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+    //     // return response()->json([
+    //     //     'add' => $add,
+    //     // ]);
+    // }
+
     public function generateLoginOTP(Request $request){
-        $mobile = $request->mobile;
         $data = 45678;
-        $password = 'Netgen@123';
-        $add = DB::table('users')
-              ->where('mobile', $mobile)
-              ->update(['password' => $password]);
+        $email = $request->email;
 
-        $credentials = $request->only('mobile', 'password');
-        $user = \RainLab\User\Models\User::whereMobile($mobile)->first();
-        $res = Auth::loginUsingId($user);
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+        $changePassword = DB::table('users')->where('email', $email)->orWhere('contact', $email)->update([
+            'password' =>  Hash::make($data),
+        ]);
+        if($changePassword){
+            Flash::success(Lang::get(/*Your Account is created Succesfully Kindly Login For Scholarship Form Submission.. */'OTP Send Kindly Check On registered Gmail/Phone..'));
         }
-
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
-        // return response()->json([
-        //     'add' => $add,
-        // ]);
     }
+
+
+    public function onSignin()
+    {
+        $redirect = parent::onSignin();
+        $user = $this->user();
+
+        return $redirect;
+    }
+
+
 }
