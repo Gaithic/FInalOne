@@ -251,6 +251,13 @@ class Account extends ComponentBase
                 $user->touchIpAddress($ipAddress);
             }
 
+
+            if ($academicYear =date('Y')) {
+                $user->date($academicYear);
+            }
+
+
+
             /*
              * Redirect
              */
@@ -305,6 +312,19 @@ class Account extends ComponentBase
                 $data['created_ip_address'] = $data['last_ip_address'] = $ipAddress;
             }
 
+
+            if ($academicYear = date('Y')) {
+                $data['academic_year'] = $data['academic_year'] = $academicYear;
+            }
+
+
+            /**
+             * Academic Year
+             */
+            if ($academicYear = date('Y')) {
+                $data['academicYear'] = $data['academicYear'] = $academicYear;
+            }
+
             /*
              * Register user
              */
@@ -319,7 +339,7 @@ class Account extends ComponentBase
             Event::fire('rainlab.user.register', [$user, $data]);
 
             Flash::success(Lang::get(/*Your Account is created Succesfully Kindly Login For Scholarship Form Submission.. */'User Registered Successfully..'));
-            
+
             return Redirect::to(url('/user-dashboard'));
             /*
              * Activation is by the user, send the email

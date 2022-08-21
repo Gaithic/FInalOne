@@ -65,6 +65,7 @@ class User extends UserBase
         'mothername',
         'gender',
         'contact',
+        'academic_year'
     ];
 
     /**
