@@ -253,7 +253,7 @@ class Account extends ComponentBase
 
 
             if ($academicYear =date('Y')) {
-                $user->date($academicYear);
+                $user->$academicYear;
             }
 
 
